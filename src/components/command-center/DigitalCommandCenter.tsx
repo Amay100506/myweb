@@ -33,7 +33,7 @@ export function DigitalCommandCenter() {
   ];
 
   const milestones = [
-    { year: "2026", title: "Market Research Analyst Intern", org: "Brand Essence", detail: "Technology market benchmarking & Power BI analytics" },
+    { year: "2026", title: "Full-Stack & Cloud Architecture", org: "Systems Engineering", detail: "Asynchronous Python backends, Next.js App Router, and Docker pipelines" },
     { year: "2025", title: "PRIOSORT System Architecture", org: "Android Systems", detail: "Engineered on-device notification prioritization rule engine" },
     { year: "2025", title: "RAKSHAK Edge Computer Vision", org: "Autonomous Safety", detail: "YOLO & OpenCV road hazard and fissure mapping pipeline" },
     { year: "2024", title: "Systems & Cloud Computing Focus", org: "DY Patil Vidyapeeth", detail: "BCA foundations in data structures, Linux, Docker, and C++" },
@@ -123,16 +123,16 @@ export function DigitalCommandCenter() {
 
                 <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-cyan-300">RESEARCH & INTELLIGENCE</span>
+                    <span className="text-xs font-mono font-bold text-cyan-300">SYSTEM ARCHITECTURE & CLOUD</span>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950 text-purple-400 border border-purple-800">
-                      COMPLETED
+                      OPTIMAL
                     </span>
                   </div>
                   <p className="text-xs text-slate-400 font-sans leading-relaxed">
-                    Internship at Brand Essence: Conducted technology market analysis, competitive feature matrices, and Power BI dashboards.
+                    Designing resilient backend services with FastAPI and Docker containerization. Next.js 16 interfaces with type-safe state coordination.
                   </p>
                   <div className="pt-2 border-t border-slate-800 text-[11px] font-mono text-purple-400">
-                    Tenure: Jan 2026 – Mar 2026
+                    Focus: Scalable Cloud & Edge Systems
                   </div>
                 </div>
 

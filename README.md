@@ -35,12 +35,12 @@ A world-class personal portfolio and developer command center engineered as a fu
 
 ## 🌟 Flagship Features
 
-1. **Personal Digital Command Center**: 4-panel telemetry operations hub tracking system status, active initiatives (Brand Essence, Rakshak), and technical competencies.
+1. **Personal Digital Command Center**: 4-panel telemetry operations hub tracking system status, active initiatives (PrioSort, Rakshak, NotifyIQ), and technical competencies.
 2. **Interactive 3D Technology Universe**: Connected 3D node graph topology in Three.js and React Three Fiber with real-time inspection.
 3. **AMAY AI (Digital Twin)**: Natural-language assistant with 3 modes (Developer, Recruiter, Collaboration), speech recognition voice input, and speech synthesis voice output.
 4. **Rapier 3D Physics Lab**: Interactive rigid-body physics simulation using `@react-three/rapier` with real-time gravity and collision impulses.
 5. **Interactive Developer CLI**: In-browser terminal supporting autocomplete (`Tab`), history navigation, and commands (`help`, `about`, `skills`, `projects`, `experience`, `education`, `github`, `contact`, `resume`, `clear`, `matrix`).
-6. **Journey Time Machine**: Interactive chronological milestone timeline (2024–2026) spanning BCA education at Dr. D. Y. Patil Vidyapeeth Pune, internship at Brand Essence, and technical achievements.
+6. **Journey Time Machine**: Interactive chronological milestone timeline (2024–2026) spanning BCA education at Dr. D. Y. Patil Vidyapeeth Pune, cloud architecture initiatives, and flagship project developments.
 7. **Project Lab & Technical Case Studies**: Dedicated deep-dive pages (`/project/priosort`, `/project/rakshak`, `/project/notifyiq`, `/project/cloud-sentinel`) with problem statements, 5-step execution pipelines, and syntax-highlighted code.
 8. **Web Audio Synthesizer**: Built-in procedural ambient drone and tactile interaction audio effects with volume slider and global mute.
 9. **Multi-Language Localization**: English (EN) and हिन्दी (HI) real-time translation toggle.

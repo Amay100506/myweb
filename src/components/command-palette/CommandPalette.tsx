@@ -121,7 +121,7 @@ export function CommandPalette({
         title: "Go to Experience Timeline",
         category: "Navigation",
         icon: Briefcase,
-        description: "Brand Essence Market Research Analyst Internship",
+        description: "Software Systems Engineering & Project Leadership",
         action: () => {
           document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
           onClose();

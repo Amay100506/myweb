@@ -149,7 +149,7 @@ export default function Home() {
         <JourneySection />
       </div>
 
-      {/* Professional Experience (Brand Essence) */}
+      {/* Professional Experience & Systems Trajectory */}
       <div className="gsap-reveal">
         <ExperienceSection />
       </div>

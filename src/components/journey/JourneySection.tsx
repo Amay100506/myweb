@@ -28,19 +28,19 @@ export interface JourneyMilestone {
 
 export const JOURNEY_MILESTONES: JourneyMilestone[] = [
   {
-    id: "brand-essence-intern",
+    id: "systems-fullstack-dev",
     year: "2026",
     quarter: "Q1",
-    title: "Market Research Analyst Intern",
+    title: "Full-Stack & Cloud Architecture Initiative",
     category: "Career",
-    organization: "Brand Essence (Pune, India)",
-    description: "Conducted high-level technology market research, competitor feature matrix benchmarking, and quantitative data synthesis.",
+    organization: "Software Systems Engineering",
+    description: "Architected distributed event brokers and telemetry pipelines combining FastAPI, Next.js App Router, and Docker.",
     deliverables: [
-      "Benchmarked pricing models, feature sets, and market penetration across digital technology sectors.",
-      "Constructed interactive client dashboards in Power BI and structured Excel models.",
-      "Delivered analytical presentations directly to senior decision-makers.",
+      "Built high-throughput webhook brokers with asynchronous task workers in Python.",
+      "Constructed reactive client dashboards with real-time telemetry updates.",
+      "Implemented automated CI/CD verification workflows and Docker multi-stage builds.",
     ],
-    tags: ["Market Research", "Power BI", "SQL", "Excel", "Data Analytics"],
+    tags: ["Next.js", "FastAPI", "Docker", "Python", "TypeScript"],
   },
   {
     id: "rakshak-dev",

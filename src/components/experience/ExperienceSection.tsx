@@ -20,7 +20,7 @@ export function ExperienceSection() {
             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Experience</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Corporate internships, analytical reporting, and competitive intelligence execution.
+            Software architecture, distributed cloud engineering, and technical system development.
           </p>
         </div>
 

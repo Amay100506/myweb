@@ -82,7 +82,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
             <p><span className="text-cyan-400 w-28 inline-block">about</span> : Candidate background & academic foundation</p>
             <p><span className="text-cyan-400 w-28 inline-block">skills</span> : Language proficiencies & frameworks</p>
             <p><span className="text-cyan-400 w-28 inline-block">projects</span> : PrioSort, Rakshak, NotifyIQ specifications</p>
-            <p><span className="text-cyan-400 w-28 inline-block">experience</span> : Brand Essence internship duties & results</p>
+            <p><span className="text-cyan-400 w-28 inline-block">experience</span> : Software systems engineering & project leadership</p>
             <p><span className="text-cyan-400 w-28 inline-block">education</span> : Dr. D. Y. Patil Vidyapeeth Pune details</p>
             <p><span className="text-cyan-400 w-28 inline-block">github</span> : Repositories, stars, and language stats</p>
             <p><span className="text-cyan-400 w-28 inline-block">contact</span> : Transmission coordinates & email</p>

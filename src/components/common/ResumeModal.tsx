@@ -129,7 +129,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   Professional Executive Summary
                 </h3>
                 <p className="text-xs text-slate-300 leading-relaxed font-sans">
-                  Proactive Software Engineer and BCA student at Dr. D. Y. Patil Vidyapeeth Pune. Experienced in Android systems programming, edge AI computer vision pipelines, and quantitative market research. Demonstrated track record in delivering analytical dashboards and production software utilities.
+                  Proactive Software Engineer and BCA student at Dr. D. Y. Patil Vidyapeeth Pune. Experienced in Android systems programming, edge AI computer vision pipelines, asynchronous Python APIs, and modern full-stack web applications. Demonstrated track record in engineering reliable, modular, and high-performance software utilities.
                 </p>
               </section>
 

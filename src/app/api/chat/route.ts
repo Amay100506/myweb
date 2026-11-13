@@ -18,21 +18,21 @@ export async function POST(req: Request) {
     if (mode === "recruiter") {
       if (query.includes("background") || query.includes("who") || query.includes("summary") || query.includes("profile")) {
         reply = `Amay Kumar is a high-impact Software Engineer and BCA student at Dr. D. Y. Patil Vidyapeeth in Pune, India.
-He has proven capability across production notification services, edge AI computer vision, and corporate market research during his internship at Brand Essence (Jan–Mar 2026).
-He brings disciplined software engineering fundamentals, full-stack agility, and deep analytical rigor to modern engineering teams.`;
+He has proven capability across production Android notification services (PRIOSORT), edge AI computer vision (RAKSHAK), and scalable Python microservices.
+He brings disciplined software engineering fundamentals, full-stack agility, and deep architectural rigor to modern engineering teams.`;
         suggested = [
-          "What was his impact at Brand Essence?",
           "Tell me about the PRIOSORT project.",
+          "Explain the RAKSHAK edge AI project.",
           "Is Amay available for immediate hiring?",
         ];
-      } else if (query.includes("experience") || query.includes("brand essence") || query.includes("intern")) {
-        reply = `During his Market Research Analyst Internship at Brand Essence (Pune, Jan–Mar 2026):
-• Conducted comprehensive technology market research and competitor benchmarking.
-• Developed executive analytics dashboards and structured SQL data models.
-• Prepared client-facing reporting deliverables communicating market opportunities with quantitative precision.
-• Demonstrated strong analytical communication, deadline adherence, and stakeholder alignment.`;
+      } else if (query.includes("experience") || query.includes("role") || query.includes("career")) {
+        reply = `Amay's Software Engineering & Systems trajectory:
+• Architected PRIOSORT: on-device Android notification prioritization system with zero cloud data leak.
+• Engineered RAKSHAK: convolutional edge vision pipeline using YOLOv8 & OpenCV for urban road hazard telemetry.
+• Constructed asynchronous Python REST APIs and webhook ingestion brokers utilizing FastAPI, Docker, and Redis.
+• Authored type-safe full-stack web applications using Next.js 16 App Router, TypeScript, and modern state architectures.`;
         suggested = [
-          "What technical tools does he use for analytics?",
+          "What technical tools does he specialize in?",
           "What degree is he pursuing?",
           "How can I schedule an interview?",
         ];
@@ -47,11 +47,11 @@ He brings disciplined software engineering fundamentals, full-stack agility, and
           "Explain the RAKSHAK project.",
         ];
       } else {
-        reply = `[RECRUITER BRIEFING] Amay Kumar combines academic excellence at Dr. D. Y. Patil Vidyapeeth Pune with practical engineering across Android systems (PRIOSORT), edge AI vision (RAKSHAK), and corporate analytics at Brand Essence.
+        reply = `[RECRUITER BRIEFING] Amay Kumar combines academic excellence at Dr. D. Y. Patil Vidyapeeth Pune with practical engineering across Android systems (PRIOSORT), edge AI vision (RAKSHAK), and cloud architectures.
 What specific background or qualification would you like to verify?`;
         suggested = [
           "What are his top 3 engineering strengths?",
-          "Tell me about his internship experience.",
+          "What are his flagship projects?",
           "How can I contact Amay for an interview?",
         ];
       }
@@ -134,7 +134,7 @@ To initiate a collaboration or technical partnership, dispatch an email to ${POR
         reply = `Amay is currently pursuing his **${PORTFOLIO_DATA.personal.education.degree}** at **${PORTFOLIO_DATA.personal.education.institution}** in Pune, India.
 His academic coursework covers data structures & algorithms in C++, relational database design in MySQL, software engineering lifecycles, and applied machine learning.`;
         suggested = [
-          "What was his Brand Essence internship?",
+          "What are his core technical skills?",
           "Show me his GitHub repositories.",
           "How to contact Amay?",
         ];
@@ -146,7 +146,7 @@ Select an operation mode (Developer, Recruiter, Collaboration) or ask any techni
           "What are his core technical skills?",
           "Explain the PRIOSORT Android application.",
           "Explain the RAKSHAK edge AI project.",
-          "What was his role at Brand Essence?",
+          "What degree is he pursuing?",
         ];
       }
     }
