@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import confetti from "canvas-confetti";
-import { Mail, Send, FileText, CheckCircle2, AlertCircle, Sparkles } from "lucide-react";
+import { Mail, Send, FileText, CheckCircle2, AlertCircle, Sparkles, Download } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
@@ -144,17 +144,28 @@ export function ContactSection({ onOpenResume }: ContactSectionProps) {
                   </div>
                 </a>
 
-                {/* Resume Download Action */}
-                <button
-                  onClick={() => {
-                    sound.playClick();
-                    onOpenResume();
-                  }}
-                  className="w-full flex items-center justify-center gap-2 p-3.5 rounded-xl bg-gradient-to-r from-purple-950/60 to-cyan-950/60 border border-purple-500/30 hover:border-cyan-400 text-slate-200 font-semibold transition-all"
-                >
-                  <FileText className="w-4 h-4 text-cyan-400" />
-                  <span>Inspect & Download Verified Resume</span>
-                </button>
+                {/* Resume Actions: Direct Download + Interactive Studio */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+                  <a
+                    href="/resume.pdf"
+                    download="Amay_Kumar_Resume.pdf"
+                    onClick={() => sound.playClick()}
+                    className="flex items-center justify-center gap-2 p-3 rounded-xl bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white font-bold transition-all shadow-lg shadow-cyan-900/30 text-center"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Download PDF</span>
+                  </a>
+                  <button
+                    onClick={() => {
+                      sound.playClick();
+                      onOpenResume();
+                    }}
+                    className="flex items-center justify-center gap-2 p-3 rounded-xl bg-slate-900/80 border border-purple-500/30 hover:border-cyan-400 text-slate-200 font-semibold transition-all text-center"
+                  >
+                    <FileText className="w-4 h-4 text-cyan-400" />
+                    <span>Resume Studio</span>
+                  </button>
+                </div>
               </div>
 
               {/* Status Note */}

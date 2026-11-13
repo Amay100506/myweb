@@ -40,7 +40,7 @@ export interface ExperienceItem {
   location: string;
   duration: string;
   period: string; // e.g. "January 2026 – March 2026"
-  type: 'Internship' | 'Full-time' | 'Project Leadership';
+  type: 'Internship' | 'Full-time' | 'Project Leadership' | 'Professional Experience' | 'Student Volunteer' | string;
   summary: string;
   responsibilities: string[];
   skillsUsed: string[];

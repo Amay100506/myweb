@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Compass, Shield, Terminal, Cpu, Cloud, Globe } from "lucide-react";
+import { GraduationCap, Compass, Shield, Terminal, Cpu, Cloud, Globe, Download, Award } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
 
@@ -8,10 +8,10 @@ export function AboutSection() {
   const { personal } = PORTFOLIO_DATA;
 
   const interestPillars = [
-    { title: "Software Engineering", icon: Cpu, desc: "Architecting modular, maintainable, and type-safe systems across platforms." },
-    { title: "Cloud Computing", icon: Cloud, desc: "Containerized deployment, reproducible Linux infrastructure, and serverless execution." },
-    { title: "Artificial Intelligence", icon: Terminal, desc: "Edge computer vision, multimodal transformers, and production RAG pipelines." },
-    { title: "Full-Stack Velocity", icon: Globe, desc: "Next.js App Router, reactive micro-interactions, and high-performance Python APIs." },
+    { title: "Cloud Architecture (AWS)", icon: Cloud, desc: "AWS Certified Cloud Practitioner: EC2, S3, IAM, VPC, RDS, and CloudWatch." },
+    { title: "DevOps & Containers", icon: Cpu, desc: "Docker containerization, Kubernetes cluster orchestration, and Jenkins/GitHub Actions CI/CD." },
+    { title: "Infrastructure as Code", icon: Terminal, desc: "Declarative Terraform provisioning, modular templates, and state management." },
+    { title: "Systems & Networking", icon: Globe, desc: "Linux POSIX administration, Bash scripting, Python automation, and TCP/IP / DNS protocols." },
   ];
 
   return (
@@ -27,7 +27,7 @@ export function AboutSection() {
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Amay Kumar</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Disciplined execution, curiosity-driven exploration, and applied technical depth.
+            Engineering student with strong focus in Cloud Computing, DevOps, automated infrastructure, and container systems.
           </p>
         </div>
 
@@ -41,33 +41,43 @@ export function AboutSection() {
                 <span className="text-purple-400 font-bold">OPERATIVE_RECORD #001</span>
                 <span className="flex items-center gap-1.5 text-emerald-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  STATUS: VERIFIED
+                  AWS CERTIFIED
                 </span>
               </div>
 
               {/* Identity Snapshot */}
-              <div className="py-5 space-y-3">
+              <div className="py-5 space-y-4">
                 <div>
                   <label className="text-[10px] font-mono uppercase text-slate-500 tracking-wider">Candidate</label>
                   <div className="text-xl font-bold font-mono text-white">{personal.name}</div>
+                  <div className="text-xs font-mono text-cyan-300">{personal.headline}</div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-mono uppercase text-slate-500 tracking-wider">Academic Foundation</label>
+                  <label className="text-[10px] font-mono uppercase text-slate-500 tracking-wider">Education & Training</label>
                   <div className="flex items-start gap-2.5 mt-1 text-slate-200">
                     <GraduationCap className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-sm">{personal.education.degree}</div>
                       <div className="text-xs text-purple-300">{personal.education.institution}</div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">{personal.location}</div>
+                      <div className="text-[11px] text-emerald-400 font-mono mt-0.5">{personal.education.status}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 mt-3 text-slate-200">
+                    <Award className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-sm">{personal.education.highSchool.degree}</div>
+                      <div className="text-xs text-slate-400">{personal.education.highSchool.institution}</div>
+                      <div className="text-[11px] text-cyan-400 font-mono mt-0.5">{personal.education.highSchool.performance}</div>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-mono uppercase text-slate-500 tracking-wider">Primary Vectors</label>
+                  <label className="text-[10px] font-mono uppercase text-slate-500 tracking-wider">Core Skill Vectors</label>
                   <div className="flex flex-wrap gap-1.5 mt-1">
-                    {["Software Engineering", "Cloud Computing", "Artificial Intelligence", "Full-Stack"].map((tag) => (
+                    {["AWS (EC2, S3, IAM)", "Docker", "Kubernetes", "Terraform", "CI/CD", "Linux", "Python", "CloudWatch"].map((tag) => (
                       <span
                         key={tag}
                         className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-purple-500/20 text-purple-200"
@@ -79,17 +89,25 @@ export function AboutSection() {
                 </div>
               </div>
 
-              {/* Live Connectivity */}
-              <div className="pt-4 border-t border-purple-500/20 flex items-center justify-between text-xs font-mono">
-                <span className="text-slate-400">PUNE, INDIA</span>
-                <span className="text-cyan-400">UTC+5:30 (IST)</span>
+              {/* Direct Download Button */}
+              <div className="pt-4 border-t border-purple-500/20 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <span className="text-slate-400">{personal.location}</span>
+                <a
+                  href="/resume.pdf"
+                  download="Amay_Kumar_Resume.pdf"
+                  onClick={() => sound.playClick()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-400/50 hover:bg-cyan-900/60 text-cyan-200 font-bold transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Resume PDF</span>
+                </a>
               </div>
             </div>
 
             {/* Quick Quote / Philosophy */}
             <div className="p-5 rounded-xl border border-cyan-500/20 bg-cyan-950/10 text-xs font-mono text-slate-300">
-              <span className="text-cyan-400 font-bold block mb-1.5">&gt;&gt; ENGINEERING PRINCIPLE:</span>
-              &ldquo;Software architecture is not merely about writing instructions; it is about building reliable, predictable, and resilient infrastructure that solves tangible human and industrial problems.&rdquo;
+              <span className="text-cyan-400 font-bold block mb-1.5">&gt;&gt; ENGINEERING PHILOSOPHY:</span>
+              &ldquo;Cloud computing and DevOps are about transforming manual, fragile infrastructure into declarative, resilient, and reproducible software architectures that deliver business value with high velocity.&rdquo;
             </div>
           </div>
 
@@ -97,7 +115,7 @@ export function AboutSection() {
           <div className="lg:col-span-7 space-y-6">
             <div className="tech-card p-6 rounded-2xl space-y-4">
               <h3 className="text-lg font-mono font-bold text-white flex items-center gap-2">
-                <span className="text-cyan-400 font-bold">&gt;</span> Engineering Trajectory
+                <span className="text-cyan-400 font-bold">&gt;</span> Professional Summary
               </h3>
               {personal.bio.map((paragraph, index) => (
                 <p key={index} className="text-slate-300 text-sm leading-relaxed font-sans">

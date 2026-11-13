@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Download, Printer, ExternalLink, Briefcase, GraduationCap, Code, CheckCircle2, UserCheck, Cpu, FolderGit2 } from "lucide-react";
+import { X, Download, Printer, ExternalLink, Briefcase, GraduationCap, Code, CheckCircle2, UserCheck, Cpu, FolderGit2, ShieldCheck, Mail, Phone, MapPin, Globe } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
 
@@ -33,7 +33,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <h2 className="text-sm font-mono font-bold tracking-wider text-slate-100">
-              AMAY_KUMAR_RESUME_STUDIO // v2.5
+              AMAY_KUMAR_RESUME_STUDIO // CLOUD & DEVOPS
             </h2>
           </div>
 
@@ -75,19 +75,30 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Direct Download Link */}
+            <a
+              href="/resume.pdf"
+              download="Amay_Kumar_Resume.pdf"
+              onClick={() => sound.playClick()}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold rounded border border-cyan-400 bg-cyan-950/60 hover:bg-cyan-900/60 text-cyan-200 transition-colors shadow-lg shadow-cyan-950/50"
+            >
+              <Download className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Direct Download PDF</span>
+            </a>
+
             <button
               onClick={handlePrint}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded border border-purple-500/30 bg-purple-950/30 hover:bg-purple-900/40 text-purple-200 transition-colors"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
+              <span>Print</span>
             </button>
             <button
               onClick={() => {
                 sound.playClick();
                 onClose();
               }}
-              className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ml-2"
+              className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ml-1"
             >
               <X className="w-4 h-4" />
             </button>
@@ -104,7 +115,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   {PORTFOLIO_DATA.personal.name}
                 </h1>
                 <p className="text-purple-400 font-mono text-sm mt-1 print:text-purple-700">
-                  {PORTFOLIO_DATA.personal.tagline}
+                  {PORTFOLIO_DATA.personal.headline}
                 </p>
               </div>
               <div className="text-right text-xs font-mono text-cyan-400">
@@ -113,10 +124,22 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             </div>
 
             <div className="flex flex-wrap gap-4 text-xs font-mono text-slate-400 mt-3 print:text-slate-600">
-              <span>📍 {PORTFOLIO_DATA.personal.location}</span>
-              <span>✉️ {PORTFOLIO_DATA.personal.social.email}</span>
-              <span>🔗 {PORTFOLIO_DATA.personal.social.github}</span>
-              <span>💼 {PORTFOLIO_DATA.personal.social.linkedin}</span>
+              <span className="flex items-center gap-1">
+                <MapPin className="w-3 h-3 text-cyan-400" />
+                {PORTFOLIO_DATA.personal.location}
+              </span>
+              <span className="flex items-center gap-1">
+                <Mail className="w-3 h-3 text-cyan-400" />
+                {PORTFOLIO_DATA.personal.social.email}
+              </span>
+              <span className="flex items-center gap-1">
+                <Phone className="w-3 h-3 text-cyan-400" />
+                {PORTFOLIO_DATA.personal.social.phone}
+              </span>
+              <span className="flex items-center gap-1">
+                <Globe className="w-3 h-3 text-cyan-400" />
+                {PORTFOLIO_DATA.personal.social.linkedin}
+              </span>
             </div>
           </div>
 
@@ -126,11 +149,29 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               {/* Executive Summary */}
               <section className="bg-slate-900/50 p-4 rounded-xl border border-slate-800 print:bg-transparent print:border-none print:p-0">
                 <h3 className="font-mono text-xs text-purple-400 uppercase tracking-wider font-bold mb-1.5">
-                  Professional Executive Summary
+                  Professional Summary
                 </h3>
                 <p className="text-xs text-slate-300 leading-relaxed font-sans">
-                  Proactive Software Engineer and BCA student at Dr. D. Y. Patil Vidyapeeth Pune. Experienced in Android systems programming, edge AI computer vision pipelines, asynchronous Python APIs, and modern full-stack web applications. Demonstrated track record in engineering reliable, modular, and high-performance software utilities.
+                  I&apos;m Amay kumar, an Engineering student with a strong interest in Cloud Computing, DevOps, and emerging technologies. I am an AWS Certified Cloud Practitioner with a passion for learning, problem-solving, and exploring real-world applications of cloud technology. I&apos;m continuously developing my technical skills through hands-on projects and practical learning, with the goal of building a successful career in Cloud and DevOps Engineering.
                 </p>
+              </section>
+
+              {/* Verified Certification Highlight */}
+              <section className="bg-gradient-to-r from-purple-950/40 to-cyan-950/40 p-4 rounded-xl border border-cyan-500/30">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                    <div>
+                      <h4 className="font-bold text-white text-sm font-mono">
+                        AWS Certified Cloud Practitioner (CLF-C02)
+                      </h4>
+                      <p className="text-xs text-cyan-300 font-mono">Amazon Web Services (AWS) // Verified Credential</p>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40">
+                    Active & Verified
+                  </span>
+                </div>
               </section>
 
               {/* Experience Highlights */}
@@ -161,11 +202,30 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <section>
                 <div className="flex items-center gap-2 text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider mb-2">
                   <GraduationCap className="w-4 h-4" />
-                  <span>Education</span>
+                  <span>Education and Training</span>
                 </div>
-                <div className="bg-slate-900/60 p-4 rounded-lg border border-slate-800">
-                  <h4 className="font-bold text-white">{PORTFOLIO_DATA.personal.education.degree}</h4>
-                  <p className="text-slate-400 text-sm">{PORTFOLIO_DATA.personal.education.institution} ({PORTFOLIO_DATA.personal.education.status})</p>
+                <div className="space-y-3">
+                  <div className="bg-slate-900/60 p-4 rounded-lg border border-slate-800">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="font-bold text-white">{PORTFOLIO_DATA.personal.education.degree}</h4>
+                        <p className="text-slate-400 text-sm">{PORTFOLIO_DATA.personal.education.institution}</p>
+                      </div>
+                      <span className="text-xs font-mono text-emerald-400 font-bold">{PORTFOLIO_DATA.personal.education.status}</span>
+                    </div>
+                  </div>
+                  <div className="bg-slate-900/60 p-4 rounded-lg border border-slate-800">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h4 className="font-bold text-white">{PORTFOLIO_DATA.personal.education.highSchool.degree}</h4>
+                        <p className="text-slate-400 text-sm">{PORTFOLIO_DATA.personal.education.highSchool.institution}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-xs font-mono text-slate-400">{PORTFOLIO_DATA.personal.education.highSchool.completionDate}</span>
+                        <p className="text-xs font-mono text-cyan-300 font-bold">{PORTFOLIO_DATA.personal.education.highSchool.performance}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </section>
             </div>
@@ -199,13 +259,20 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <section>
                 <div className="flex items-center gap-2 text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider mb-2">
                   <Code className="w-4 h-4" />
-                  <span>Verified Credentials</span>
+                  <span>Verified Credentials & Licenses</span>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-2 text-xs">
+                <div className="grid sm:grid-cols-1 gap-2 text-xs">
                   {PORTFOLIO_DATA.certifications.map((c) => (
-                    <div key={c.id} className="p-3 rounded bg-slate-900/40 border border-slate-800">
-                      <div className="font-bold text-white">{c.title}</div>
-                      <div className="text-[11px] text-purple-400">{c.issuer} ({c.issueDate})</div>
+                    <div key={c.id} className="p-3.5 rounded bg-slate-900/40 border border-slate-800">
+                      <div className="font-bold text-white text-sm font-mono">{c.title}</div>
+                      <div className="text-xs text-purple-400">{c.issuer} ({c.issueDate})</div>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {c.skillsValidated.map((skill) => (
+                          <span key={skill} className="px-2 py-0.5 rounded bg-purple-950 border border-purple-800 text-[10px] text-purple-300 font-mono">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -218,7 +285,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="space-y-6">
               <div className="flex items-center gap-2 text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider mb-2">
                 <FolderGit2 className="w-4 h-4" />
-                <span>Flagship Engineering Systems</span>
+                <span>Cloud, DevOps & Engineering Systems</span>
               </div>
               <div className="space-y-4">
                 {PORTFOLIO_DATA.projects.map((proj) => (
@@ -249,6 +316,22 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               </div>
             </div>
           )}
+
+          {/* Bottom Direct Download Banner */}
+          <div className="pt-4 border-t border-purple-500/20 flex flex-wrap items-center justify-between gap-4">
+            <div className="text-xs font-mono text-slate-400">
+              Need offline evaluation? Download the official resume PDF directly.
+            </div>
+            <a
+              href="/resume.pdf"
+              download="Amay_Kumar_Resume.pdf"
+              onClick={() => sound.playClick()}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-mono text-xs font-bold shadow-lg shadow-purple-600/30 transition-all duration-200"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Official Resume (PDF)</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

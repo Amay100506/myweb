@@ -137,84 +137,122 @@ class RoadHazardDetector:
   },
   notifyiq: {
     architectureFlow: [
-      "1. Inbound webhooks from GitHub, Slack, and cloud monitors arrive at FastAPI broker.",
-      "2. Async worker pool buffers events in Redis queue.",
-      "3. Urgency scoring algorithm calculates contextual message score based on authority and keywords.",
-      "4. Real-time Next.js dashboard updates telemetry curves via WebSocket stream.",
-      "5. High-urgency alerts are immediately routed to critical communication endpoints.",
+      "1. Terraform declares modular AWS VPC, public/private subnets, and security groups in HCL.",
+      "2. Developer pushes commits to GitHub; automated GitHub Actions workflow triggers.",
+      "3. Runner executes test suites, builds minimal multi-stage Docker container images, and pushes to registry.",
+      "4. SSH deployment runner pulls image onto target AWS EC2 instance and restarts service with zero downtime.",
+      "5. AWS CloudWatch alarm monitors container health and CPU utilization metrics.",
     ],
     codeSnippet: {
-      language: "python",
-      filename: "webhook_broker.py",
-      code: `from fastapi import FastAPI, BackgroundTasks, HTTPException
-from pydantic import BaseModel
+      language: "hcl",
+      filename: "main.tf",
+      code: `resource "aws_vpc" "production_vpc" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 
-app = FastAPI(title="NotifyIQ Telemetry Broker")
+  tags = {
+    Name        = "amay-production-vpc"
+    Environment = "production"
+    ManagedBy   = "terraform"
+  }
+}
 
-class WebhookPayload(BaseModel):
-    source: str
-    sender_authority: float
-    message_body: str
-    tags: list[str]
+resource "aws_security_group" "web_sg" {
+  name        = "web-server-sg"
+  description = "Allow inbound HTTPS and SSH access"
+  vpc_id      = aws_vpc.production_vpc.id
 
-@app.post("/api/v1/ingest")
-async def ingest_webhook(payload: WebhookPayload, tasks: BackgroundTasks):
-    urgency_vector = compute_urgency_score(
-        payload.sender_authority, 
-        payload.message_body,
-        payload.tags
-    )
-    
-    if urgency_vector > 0.8:
-        tasks.add_task(dispatch_urgent_alert, payload)
-    else:
-        tasks.add_task(buffer_digest, payload)
-        
-    return {"status": "ingested", "urgency": urgency_vector}`,
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}`,
     },
     challengesAndSolutions: [
       {
-        challenge: "Preventing webhook bottlenecks during high alert storms.",
-        solution: "Separated ingest endpoints from scoring routines using non-blocking asynchronous Python coroutines.",
+        challenge: "Managing remote state concurrency and configuration drift across deployments.",
+        solution: "Configured Terraform S3 backend with DynamoDB state locking to ensure atomic team execution.",
+      },
+      {
+        challenge: "Minimizing Docker build latency in GitHub Actions runners.",
+        solution: "Implemented multi-stage Docker builds and Docker layer caching with BuildKit.",
       },
     ],
     roadmap: [
-      "Slack bot integration for custom notification digests.",
-      "ML-based personal attention model learning individual user response times.",
+      "Automated blue-green canary deployment rollouts.",
+      "Terragrunt integration for multi-environment DRY infrastructure code.",
     ],
   },
   "cloud-sentinel": {
     architectureFlow: [
-      "1. Daemon loop loads YAML probe configurations defining endpoints and thresholds.",
-      "2. Async HTTP/TCP client probes microservice health with jittered polling intervals.",
-      "3. Response latency metrics (p50, p95, p99) are logged into SQLite ring buffer.",
-      "4. CLI prints terminal HUD report or dispatches alert if consecutive probes fail.",
+      "1. Multi-tier application microservices are packaged into isolated Docker containers.",
+      "2. Kubernetes manifests declare Pods, Deployments, ReplicaSets, and ClusterIP networking.",
+      "3. Managed AWS EKS cluster provisions worker node groups across multiple Availability Zones.",
+      "4. AWS Network Load Balancer (NLB) distributes incoming ingress traffic across pods.",
+      "5. Prometheus scraper scrapes container metrics and dispatches alerts to CloudWatch dashboards.",
     ],
     codeSnippet: {
-      language: "python",
-      filename: "sentinel_probe.py",
-      code: `import asyncio
-import httpx
-import time
-
-async def probe_endpoint(client: httpx.AsyncClient, target: str):
-    start = time.perf_counter()
-    try:
-        response = await client.get(target, timeout=3.0)
-        latency_ms = (time.perf_counter() - start) * 1000
-        return {"target": target, "status": response.status_code, "latency_ms": latency_ms}
-    except httpx.RequestError as exc:
-        return {"target": target, "status": "FAILED", "error": str(exc)}`,
+      language: "yaml",
+      filename: "deployment.yaml",
+      code: `apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-app
+  namespace: production
+  labels:
+    app: microservice-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservice-app
+  template:
+    metadata:
+      labels:
+        app: microservice-app
+    spec:
+      containers:
+      - name: web-service
+        image: amaykumar/microservice:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10`,
     },
     challengesAndSolutions: [
       {
-        challenge: "Ensuring zero external runtime dependencies on target Linux hosts.",
-        solution: "Containerized the monitor into a self-contained multi-stage Alpine Docker image under 30MB.",
+        challenge: "Ensuring zero-downtime microservice updates and dynamic traffic failover.",
+        solution: "Configured Kubernetes RollingUpdate strategy with maxUnavailable: 0 and readiness probes.",
+      },
+      {
+        challenge: "Cluster resource isolation and least privilege security.",
+        solution: "Implemented AWS IAM Roles for Service Accounts (IRSA) to grant granular permissions per Pod.",
       },
     ],
     roadmap: [
-      "Prometheus metrics exporter endpoint.",
-      "Automated container restart triggers upon consecutive probe failures.",
+      "Helm chart packaging for simplified environment parameterization.",
+      "Horizontal Pod Autoscaler (HPA) based on Prometheus custom metrics.",
     ],
   },
 };

@@ -183,9 +183,19 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
         break;
 
       case "resume":
+        if (typeof window !== "undefined") {
+          window.open("/resume.pdf", "_blank");
+        }
         output = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-emerald-400">Curriculum Vitae verified. Click &apos;Resume&apos; in navbar or run printable modal to view.</p>
+            <p className="text-emerald-400 font-bold">Initiating direct download of official resume PDF...</p>
+            <p className="text-xs text-slate-400">
+              Direct Link:{" "}
+              <a href="/resume.pdf" download="Amay_Kumar_Resume.pdf" className="text-cyan-400 underline font-bold">
+                /resume.pdf (Amay_Kumar_Resume.pdf)
+              </a>
+            </p>
+            <p className="text-xs text-purple-400">Credential: AWS Certified Cloud Practitioner (CLF-C02) | BCA Dr. D.Y. Patil Vidyapeeth Pune</p>
           </div>
         );
         break;

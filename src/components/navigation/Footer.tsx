@@ -52,6 +52,14 @@ export function Footer({ onOpenTerminal, onOpenCommandPalette }: FooterProps) {
             [CLI Terminal]
           </button>
           <a
+            href="/resume.pdf"
+            download="Amay_Kumar_Resume.pdf"
+            onClick={() => sound.playClick()}
+            className="text-cyan-400 hover:text-cyan-200 font-bold transition-colors"
+          >
+            [Download Resume (PDF)]
+          </a>
+          <a
             href={PORTFOLIO_DATA.personal.social.github}
             target="_blank"
             rel="noreferrer"

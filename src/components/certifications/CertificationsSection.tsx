@@ -20,7 +20,7 @@ export function CertificationsSection() {
             Verified <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Certifications</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Formal technical validations across software engineering, cloud systems, and data analytics.
+            Official Amazon Web Services credential: AWS Certified Cloud Practitioner (CLF-C02).
           </p>
         </div>
 

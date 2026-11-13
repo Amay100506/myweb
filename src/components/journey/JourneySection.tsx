@@ -10,7 +10,8 @@ import {
   Calendar, 
   ChevronRight, 
   ExternalLink,
-  Sparkles
+  Sparkles,
+  Download
 } from "lucide-react";
 import { sound } from "@/lib/sound";
 
@@ -28,79 +29,109 @@ export interface JourneyMilestone {
 
 export const JOURNEY_MILESTONES: JourneyMilestone[] = [
   {
-    id: "systems-fullstack-dev",
+    id: "performancespur-sales",
     year: "2026",
-    quarter: "Q1",
-    title: "Full-Stack & Cloud Architecture Initiative",
+    quarter: "Q2",
+    title: "Sales Executive",
     category: "Career",
-    organization: "Software Systems Engineering",
-    description: "Architected distributed event brokers and telemetry pipelines combining FastAPI, Next.js App Router, and Docker.",
+    organization: "performancespur (Pune, IN)",
+    description: "Recorded client details and sales activity in CRM systems. Built strong, professional relationships through identification of client needs, increasing overall sales.",
     deliverables: [
-      "Built high-throughput webhook brokers with asynchronous task workers in Python.",
-      "Constructed reactive client dashboards with real-time telemetry updates.",
-      "Implemented automated CI/CD verification workflows and Docker multi-stage builds.",
+      "Recorded client pipeline information and updated CRM databases systematically.",
+      "Identified customer pain points to drive conversions and expand sales opportunities.",
+      "Maintained organized customer correspondence and cross-functional communications.",
     ],
-    tags: ["Next.js", "FastAPI", "Docker", "Python", "TypeScript"],
+    tags: ["CRM Systems", "Client Relations", "Sales Activity", "Pune, IN"],
   },
   {
-    id: "rakshak-dev",
+    id: "nss-volunteer",
+    year: "2025 – 2026",
+    quarter: "Q1",
+    title: "Student Volunteer",
+    category: "Career",
+    organization: "NSS (Pune, IN)",
+    description: "Assisted with answering incoming telephone calls, managing databases, and drafting correspondence while providing technical support and instructional assistance.",
+    deliverables: [
+      "Managed databases and digital records for student correspondence and outreach.",
+      "Provided technical support and instructional assistance to help students succeed.",
+      "Assisted university administrators with logistics and documentation.",
+    ],
+    tags: ["Database Management", "Technical Support", "Instructional Assistance", "NSS"],
+  },
+  {
+    id: "aws-clf-certification",
     year: "2025",
-    quarter: "Q4",
-    title: "RAKSHAK Edge Computer Vision Pipeline",
-    category: "Projects",
-    organization: "Applied AI Initiative",
-    description: "Architected real-time urban road surface hazard and pothole identification system using edge AI and OpenCV.",
+    quarter: "Verified",
+    title: "AWS Certified Cloud Practitioner (CLF-C02)",
+    category: "Certifications",
+    organization: "Amazon Web Services (AWS)",
+    description: "Achieved official AWS CLF-C02 certification validating foundational knowledge of cloud concepts, security, architecture, pricing, and services.",
     deliverables: [
-      "Engineered convolutional frame classification using YOLO architecture.",
-      "Implemented spatial edge filtering and GPS geofencing.",
-      "Built telemetry ingestion backend using FastAPI.",
+      "Demonstrated core proficiency in AWS EC2, S3, RDS, VPC, and CloudWatch.",
+      "Validated least-privilege security governance with AWS IAM and encryption policies.",
+      "Comprehensive understanding of AWS global infrastructure, billing, and pricing models.",
     ],
-    tags: ["Computer Vision", "Python", "OpenCV", "YOLO", "FastAPI"],
+    tags: ["AWS", "CLF-C02", "Cloud Computing", "Security", "Verified Credential"],
   },
   {
-    id: "priosort-dev",
+    id: "cloud-infrastructure-project",
     year: "2025",
     quarter: "Q3",
-    title: "PRIOSORT Android Application Architecture",
+    title: "Automated Infrastructure & CI/CD Pipeline",
     category: "Projects",
-    organization: "Mobile Systems Engineering",
-    description: "Engineered on-device notification classification and priority customization service for Android devices.",
+    organization: "Cloud & DevOps Engineering",
+    description: "Automated cloud infrastructure provisioning using Terraform and application deployment using Docker and GitHub Actions.",
     deliverables: [
-      "Passive interception via Android NotificationListenerService.",
-      "Zero cloud leakage local SQLite rule engine.",
-      "Customizable notification batch digests and alert overrides.",
+      "Declared AWS VPC, subnets, EC2, and security groups in HashiCorp Terraform (HCL).",
+      "Packaged microservices into minimal, reproducible Docker container images.",
+      "Automated continuous integration and deployment with GitHub Actions workflows.",
     ],
-    tags: ["Java", "Android SDK", "SQLite", "System Services"],
+    tags: ["Terraform", "Docker", "GitHub Actions", "AWS", "Linux", "Bash"],
   },
   {
-    id: "certifications-milestone",
+    id: "eks-microservices-project",
     year: "2025",
     quarter: "Q2",
-    title: "Verified Technical Assessment Accreditations",
-    category: "Certifications",
-    organization: "Technical Standards Council",
-    description: "Validated competencies across Python systems development, modern full-stack web engineering, and cloud containers.",
+    title: "AWS EKS Kubernetes Microservices",
+    category: "Projects",
+    organization: "Cloud Systems",
+    description: "Containerized multiple microservices using Docker and deployed them on Amazon Elastic Kubernetes Service (AWS EKS) using Kubernetes.",
     deliverables: [
-      "Python Software Development & Data Engineering accreditation.",
-      "Full-Stack Web Development & Modern Frameworks credential.",
-      "Cloud Computing, Containers (Docker) & Linux Systems validation.",
+      "Orchestrated pods, deployments, and services across AWS EKS worker nodes.",
+      "Implemented Kubernetes self-healing and load-balanced traffic routing.",
+      "Integrated Prometheus metrics scraping and CloudWatch monitoring.",
     ],
-    tags: ["Python", "Docker", "Next.js", "Linux"],
+    tags: ["Kubernetes", "AWS EKS", "Docker", "Prometheus", "CloudWatch"],
   },
   {
-    id: "bca-foundation",
-    year: "2024",
-    quarter: "Q3",
-    title: "BCA Foundations & Systems Programming",
+    id: "bca-dy-patil",
+    year: "2024 – Present",
+    quarter: "Ongoing",
+    title: "Bachelor of Computer Applications (BCA)",
     category: "Education",
     organization: "Dr. D. Y. Patil Vidyapeeth, Pune",
-    description: "Began Bachelor of Computer Applications focusing on foundational computer science, low-level algorithms, and database modeling.",
+    description: "Pursuing BCA degree with current CGPA 8.0, developing deep technical foundations in cloud computing, DevOps, Linux, and software engineering.",
     deliverables: [
-      "Data structures and algorithms mastery in C and C++.",
-      "Relational schema modeling and ACID transactions in MySQL.",
-      "Core operating systems principles and POSIX shell environments.",
+      "Achieved strong academic standing with a current CGPA of 8.0.",
+      "Mastered Linux POSIX environments, shell scripting, and Python programming.",
+      "Studied database management systems, computer networks (TCP/IP), and cloud fundamentals.",
     ],
-    tags: ["C", "C++", "MySQL", "Algorithms", "Pune"],
+    tags: ["BCA", "Dr. DY Patil", "CGPA 8.0", "Pune", "Higher Education"],
+  },
+  {
+    id: "kv-bareilly-diploma",
+    year: "2024",
+    quarter: "05/2024",
+    title: "High School Diploma",
+    category: "Education",
+    organization: "Kendriya Vidyalaya AFS Bareilly - Bareilly",
+    description: "Graduated with strong academic performance across secondary and senior secondary education.",
+    deliverables: [
+      "10th Grade CBSE Board Examination: 88%.",
+      "12th Grade CBSE Board Examination: 81%.",
+      "Strong foundation in mathematics, analytical problem solving, and science.",
+    ],
+    tags: ["Kendriya Vidyalaya", "AFS Bareilly", "10th: 88%", "12th: 81%", "CBSE"],
   },
 ];
 
@@ -132,23 +163,23 @@ export function JourneySection() {
             Journey <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">Time Machine</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Chronological milestones across university education, corporate market analysis, engineering systems, and certifications.
+            Chronological milestones across education (KV Bareilly, DY Patil), professional experience (performancespur, NSS), cloud projects, and AWS certification.
           </p>
         </div>
 
         {/* Filter Pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {["All", "Career", "Projects", "Education", "Certifications"].map((cat) => (
+          {["All", "Education", "Career", "Projects", "Certifications"].map((cat) => (
             <button
               key={cat}
               onClick={() => {
                 sound.playClick();
                 setActiveCategory(cat);
               }}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-purple-600 text-white font-bold shadow-md shadow-purple-600/30"
-                  : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-white"
+                  ? "bg-purple-600 text-white font-bold shadow-lg shadow-purple-600/30"
+                  : "bg-slate-900/60 border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700"
               }`}
             >
               {cat}
@@ -156,87 +187,87 @@ export function JourneySection() {
           ))}
         </div>
 
-        {/* Vertical Timeline Spine */}
-        <div className="relative border-l-2 border-purple-500/30 ml-4 sm:ml-32 space-y-8 pb-4">
-          {filtered.map((item) => {
-            const Icon = categoryIcons[item.category] || Code;
-            const isExpanded = expandedId === item.id;
+        {/* Interactive Chronological Milestone Stream */}
+        <div className="relative border-l-2 border-purple-500/30 ml-4 sm:ml-8 space-y-8 pl-6 sm:pl-8">
+          {filtered.map((milestone) => {
+            const Icon = categoryIcons[milestone.category] || Code;
+            const isExpanded = expandedId === milestone.id;
 
             return (
-              <div key={item.id} className="relative pl-6 sm:pl-8 group">
-                {/* Node Dot on Timeline */}
-                <div
-                  className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 transition-all ${
-                    isExpanded
-                      ? "bg-cyan-400 border-white shadow-[0_0_12px_rgba(34,211,238,0.8)] scale-125"
-                      : "bg-slate-950 border-purple-500/80 group-hover:border-cyan-400"
-                  }`}
-                />
-
-                {/* Left Timestamp for desktop */}
-                <div className="hidden sm:block absolute -left-32 top-1 w-24 text-right font-mono">
-                  <div className="text-sm font-bold text-cyan-300">{item.year}</div>
-                  <div className="text-[10px] text-slate-500">{item.quarter}</div>
+              <div
+                key={milestone.id}
+                className="relative group transition-all"
+                onMouseEnter={() => sound.playHover()}
+              >
+                {/* Timeline Orb */}
+                <div className="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-400/20 group-hover:scale-110 group-hover:border-purple-400 transition-transform">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400" />
                 </div>
 
                 {/* Milestone Card */}
                 <div
                   onClick={() => {
                     sound.playClick();
-                    setExpandedId(isExpanded ? null : item.id);
+                    setExpandedId(isExpanded ? null : milestone.id);
                   }}
-                  className={`tech-card p-5 sm:p-6 rounded-xl cursor-pointer transition-all duration-200 border-purple-500/20 ${
-                    isExpanded ? "border-purple-500/50 bg-slate-900/90 shadow-xl shadow-purple-950/30" : "hover:border-slate-700"
+                  className={`tech-card p-5 sm:p-6 rounded-xl border transition-all cursor-pointer ${
+                    isExpanded
+                      ? "border-cyan-400/60 bg-slate-900/90 shadow-xl shadow-cyan-950/40"
+                      : "border-slate-800 bg-slate-900/40 hover:border-purple-500/40"
                   }`}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="p-1.5 rounded bg-purple-950/60 text-cyan-300 border border-purple-500/30">
-                        <Icon className="w-3.5 h-3.5" />
-                      </div>
-                      <span className="sm:hidden font-mono text-xs text-cyan-400 font-bold mr-1">
-                        [{item.year} {item.quarter}]
+                      <span className="text-xs font-mono font-bold text-cyan-400">
+                        {milestone.year}
                       </span>
-                      <h3 className="font-mono font-bold text-base text-white group-hover:text-cyan-300 transition-colors">
-                        {item.title}
-                      </h3>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-950/60 border border-purple-500/30 text-purple-300">
+                        {milestone.quarter}
+                      </span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 flex items-center gap-1">
+                        <Icon className="w-3 h-3 text-cyan-400" />
+                        {milestone.category}
+                      </span>
                     </div>
-
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-purple-300 border border-slate-800">
-                      {item.category}
-                    </span>
+                    <ChevronRight
+                      className={`w-4 h-4 text-slate-500 transition-transform ${
+                        isExpanded ? "rotate-90 text-cyan-400" : ""
+                      }`}
+                    />
                   </div>
 
-                  <div className="text-xs font-semibold text-purple-300 font-sans mb-2">
-                    {item.organization}
+                  <h3 className="text-lg font-bold font-mono text-white group-hover:text-cyan-300 transition-colors">
+                    {milestone.title}
+                  </h3>
+                  <div className="text-xs font-mono text-purple-300 mb-2">
+                    {milestone.organization}
                   </div>
-
                   <p className="text-xs text-slate-300 font-sans leading-relaxed">
-                    {item.description}
+                    {milestone.description}
                   </p>
 
-                  {/* Expanded Deliverables List */}
+                  {/* Expandable Deliverables */}
                   {isExpanded && (
-                    <div className="mt-4 pt-4 border-t border-purple-500/15 space-y-3">
-                      <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider block">
-                        Operational Highlights
-                      </span>
+                    <div className="mt-4 pt-4 border-t border-purple-500/20 space-y-3">
+                      <h4 className="text-[11px] font-mono uppercase text-cyan-400 font-bold tracking-wider">
+                        Key Accomplishments & Deliverables
+                      </h4>
                       <ul className="space-y-1.5 text-xs text-slate-300 font-sans">
-                        {item.deliverables.map((d, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-cyan-400 font-mono">▸</span>
-                            <span>{d}</span>
+                        {milestone.deliverables.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-purple-400 font-mono mt-0.5">▸</span>
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
 
                       <div className="flex flex-wrap gap-1.5 pt-2">
-                        {item.tags.map((t) => (
+                        {milestone.tags.map((tag) => (
                           <span
-                            key={t}
-                            className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950 text-slate-400 border border-slate-800"
+                            key={tag}
+                            className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-slate-400"
                           >
-                            {t}
+                            #{tag}
                           </span>
                         ))}
                       </div>

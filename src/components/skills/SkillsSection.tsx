@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Code, Cpu, Database, Cloud, LineChart, Sparkles, Filter, CheckCircle2 } from "lucide-react";
+import { Code, Cpu, Database, Cloud, LineChart, Sparkles, Filter, CheckCircle2, Layers, Box, Terminal, GitBranch, Activity, Network, ShieldCheck } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
 import { SkillCategory, SkillItem } from "@/types";
@@ -13,12 +13,14 @@ export function SkillsSection() {
   const categories = PORTFOLIO_DATA.skills;
 
   const categoryIcons: Record<string, typeof Code> = {
-    programming: Code,
-    "web-development": Cpu,
-    "cloud-devops": Cloud,
-    databases: Database,
-    "data-analytics": LineChart,
-    "ai-emerging": Sparkles,
+    cloud: Cloud,
+    devops: Layers,
+    iac: Box,
+    "os-scripting": Terminal,
+    "version-control": GitBranch,
+    monitoring: Activity,
+    networking: Network,
+    security: ShieldCheck,
   };
 
   const displayedSkills = activeCategory === "all"
@@ -38,7 +40,7 @@ export function SkillsSection() {
             Skill <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Constellation</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Verified proficiencies across low-level programming, cloud infrastructure, full-stack systems, and applied AI.
+            AWS Cloud Architecture, DevOps Automation, Infrastructure as Code, Linux Systems, and Security Governance.
           </p>
         </div>
 

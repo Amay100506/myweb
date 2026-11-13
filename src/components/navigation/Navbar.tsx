@@ -10,7 +10,8 @@ import {
   Menu, 
   X, 
   Sparkles,
-  ExternalLink 
+  ExternalLink,
+  Download
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { SoundToggle } from "../common/SoundToggle";
@@ -179,18 +180,29 @@ export function Navbar({
             <span className="text-[11px] font-semibold">AMAY AI</span>
           </button>
 
-          {/* Resume Preview */}
-          <button
-            onClick={() => {
-              sound.playClick();
-              onOpenResume();
-            }}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-cyan-500/40 bg-cyan-950/20 hover:bg-cyan-900/30 text-xs font-mono text-cyan-300 transition-colors"
-            title="View Resume"
-          >
-            <FileText className="w-3.5 h-3.5" />
-            <span className="text-[11px]">Resume</span>
-          </button>
+          {/* Resume Studio & Direct Download */}
+          <div className="flex items-center rounded-md border border-cyan-500/40 bg-cyan-950/20 overflow-hidden">
+            <button
+              onClick={() => {
+                sound.playClick();
+                onOpenResume();
+              }}
+              className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono text-cyan-300 hover:bg-cyan-900/40 transition-colors"
+              title="View Resume Studio"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span className="text-[11px]">Resume</span>
+            </button>
+            <a
+              href="/resume.pdf"
+              download="Amay_Kumar_Resume.pdf"
+              onClick={() => sound.playClick()}
+              className="px-2 py-1 text-cyan-400 hover:text-white hover:bg-cyan-900/50 border-l border-cyan-500/30 transition-colors"
+              title="Direct Download Resume (PDF)"
+            >
+              <Download className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -264,8 +276,20 @@ export function Navbar({
               className="flex items-center justify-center gap-2 p-2 rounded bg-cyan-950/50 border border-cyan-500/40 text-cyan-200"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Resume</span>
+              <span>Resume Studio</span>
             </button>
+            <a
+              href="/resume.pdf"
+              download="Amay_Kumar_Resume.pdf"
+              onClick={() => {
+                sound.playClick();
+                setMobileMenuOpen(false);
+              }}
+              className="col-span-2 flex items-center justify-center gap-2 p-2 rounded bg-gradient-to-r from-purple-900/60 to-cyan-900/60 border border-cyan-400/50 text-cyan-200 font-bold"
+            >
+              <Download className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Direct Download Resume (PDF)</span>
+            </a>
           </div>
         </div>
       )}

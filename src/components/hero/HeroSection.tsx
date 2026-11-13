@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight } from "lucide-react";
+import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight, Download } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { HeroCanvas } from "../three/HeroCanvas";
 import { TelemetryHUD } from "../common/TelemetryHUD";
@@ -80,16 +80,28 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
             Explore Portfolio
           </button>
 
-          {/* Download Resume */}
+          {/* Direct Download Resume */}
+          <a
+            href="/resume.pdf"
+            download="Amay_Kumar_Resume.pdf"
+            onClick={() => sound.playClick()}
+            className="px-5 py-3 rounded-lg border border-cyan-500/50 bg-cyan-950/40 hover:bg-cyan-900/40 text-cyan-200 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg shadow-cyan-950/40"
+          >
+            <Download className="w-4 h-4 text-cyan-400" />
+            <span>Download Resume</span>
+          </a>
+
+          {/* Interactive Resume Studio */}
           <button
             onClick={() => {
               sound.playClick();
               onOpenResume();
             }}
-            className="px-6 py-3 rounded-lg border border-cyan-500/40 bg-slate-950/70 hover:bg-cyan-950/30 text-cyan-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2"
+            className="px-4 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-1.5"
+            title="Interactive Resume Studio"
           >
-            <FileText className="w-4 h-4 text-cyan-400" />
-            <span>Resume</span>
+            <FileText className="w-3.5 h-3.5 text-purple-400" />
+            <span>Studio</span>
           </button>
 
           {/* Contact Me */}

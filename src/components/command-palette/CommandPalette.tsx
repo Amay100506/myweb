@@ -14,7 +14,8 @@ import {
   Briefcase, 
   Sparkles, 
   X,
-  ExternalLink
+  ExternalLink,
+  Download
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
@@ -174,13 +175,29 @@ export function CommandPalette({
       },
       {
         id: "action-resume",
-        title: "Preview & Download Resume",
+        title: "Preview Resume Studio",
         category: "Actions",
         icon: FileText,
-        description: "Verified resume of Amay Kumar",
+        description: "Verified interactive resume of Amay Kumar",
         action: () => {
           onClose();
           onOpenResume?.();
+        },
+      },
+      {
+        id: "action-download-resume",
+        title: "Direct Download Official Resume (PDF)",
+        category: "Actions",
+        icon: Download,
+        description: "Directly download Amay_Kumar_Resume.pdf to your device",
+        action: () => {
+          onClose();
+          const link = document.createElement("a");
+          link.href = "/resume.pdf";
+          link.download = "Amay_Kumar_Resume.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
         },
       },
       {

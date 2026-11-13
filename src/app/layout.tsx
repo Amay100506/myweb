@@ -20,20 +20,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Amay Kumar | Software Engineer & AI Systems Developer",
+  title: "Amay Kumar | Cloud & DevOps Engineer | AWS Certified Cloud Practitioner",
   description:
-    "Official portfolio of Amay Kumar. Building at the intersection of Software Engineering, Cloud Computing, and Artificial Intelligence. BCA @ Dr. D. Y. Patil Vidyapeeth, Pune.",
+    "Official portfolio of Amay Kumar. AWS Certified Cloud Practitioner, Cloud & DevOps Engineer specializing in AWS, Docker, Kubernetes, Terraform, and CI/CD. BCA @ Dr. D. Y. Patil Vidyapeeth, Pune.",
   keywords: [
     "Amay Kumar",
-    "Software Engineer",
-    "Cloud Computing",
-    "Artificial Intelligence",
-    "PrioSort",
-    "Rakshak",
-    "Next.js",
+    "Cloud Engineer",
+    "DevOps Engineer",
+    "AWS Certified Cloud Practitioner",
+    "CLF-C02",
+    "Terraform",
+    "Docker",
+    "Kubernetes",
+    "AWS EKS",
+    "AWS EC2",
+    "AWS S3",
+    "Linux",
+    "Bash",
     "Python",
     "Pune",
-    "Full-Stack Developer",
   ],
   authors: [{ name: "Amay Kumar", url: "https://github.com/Amay100506" }],
   creator: "Amay Kumar",
@@ -45,9 +50,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://amaykumar.dev",
-    title: "Amay Kumar | Software Engineer & AI Systems Developer",
+    title: "Amay Kumar | Cloud & DevOps Engineer | AWS Certified Cloud Practitioner",
     description:
-      "Building at the intersection of Software Engineering, Cloud Computing and Artificial Intelligence.",
+      "AWS Certified Cloud Practitioner and DevOps Engineer specializing in automated cloud infrastructure, container orchestration, and CI/CD pipelines.",
     siteName: "Amay Kumar Portfolio Nexus",
   },
   twitter: {

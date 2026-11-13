@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Calendar, MapPin, CheckCircle2, TrendingUp, BarChart3, FileSpreadsheet } from "lucide-react";
+import { Briefcase, Calendar, MapPin, CheckCircle2, TrendingUp, BarChart3, FileSpreadsheet, Download } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
 
@@ -20,7 +20,7 @@ export function ExperienceSection() {
             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Experience</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Software architecture, distributed cloud engineering, and technical system development.
+            Client relations & CRM operations at performancespur, NSS student volunteerism, and technical systems support.
           </p>
         </div>
 
@@ -110,6 +110,27 @@ export function ExperienceSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Direct Download Callout */}
+        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-purple-950/40 via-slate-900/60 to-cyan-950/40 border border-purple-500/30 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h4 className="text-sm font-mono font-bold text-white">
+              Verified Experience & Credentials Summary
+            </h4>
+            <p className="text-xs text-slate-400 font-sans mt-0.5 max-w-xl">
+              Download Amay Kumar&apos;s complete curriculum vitae in high-resolution PDF format, including AWS CLF-C02 certification, academic background, and skills.
+            </p>
+          </div>
+          <a
+            href="/resume.pdf"
+            download="Amay_Kumar_Resume.pdf"
+            onClick={() => sound.playClick()}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-mono text-xs font-bold transition-all shadow-lg shadow-cyan-950/50"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download Resume PDF</span>
+          </a>
         </div>
       </div>
     </section>
