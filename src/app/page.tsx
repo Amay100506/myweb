@@ -15,7 +15,6 @@ import { GitHubSection } from "@/components/github/GitHubSection";
 import { CertificationsSection } from "@/components/certifications/CertificationsSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { Footer } from "@/components/navigation/Footer";
-import { AIAssistantDrawer } from "@/components/ai-assistant/AIAssistantDrawer";
 import { CommandPalette } from "@/components/command-palette/CommandPalette";
 import { TerminalModal } from "@/components/terminal/TerminalModal";
 import { ResumeModal } from "@/components/common/ResumeModal";
@@ -42,8 +41,6 @@ export default function Home() {
     setCommandPaletteOpen,
     terminalOpen,
     setTerminalOpen,
-    aiAssistantOpen,
-    setAiAssistantOpen,
     resumeOpen,
     setResumeOpen,
     soundControlsOpen,
@@ -116,7 +113,6 @@ export default function Home() {
       <Navbar
         onOpenCommandPalette={() => setCommandPaletteOpen(true)}
         onOpenTerminal={() => setTerminalOpen(true)}
-        onOpenAI={() => setAiAssistantOpen(true)}
         onOpenResume={() => setResumeOpen(true)}
         onOpenSoundControls={() => setSoundControlsOpen(true)}
       />
@@ -125,7 +121,6 @@ export default function Home() {
       <HeroSection
         onOpenResume={() => setResumeOpen(true)}
         onOpenTerminal={() => setTerminalOpen(true)}
-        onOpenAI={() => setAiAssistantOpen(true)}
       />
 
       {/* Featured Projects Showcases */}
@@ -164,19 +159,11 @@ export default function Home() {
         onOpenCommandPalette={() => setCommandPaletteOpen(true)}
       />
 
-      {/* Module 2: AMAY AI Floating Digital Twin (Voice + Modes) */}
-      <AIAssistantDrawer
-        isOpen={aiAssistantOpen}
-        onClose={() => setAiAssistantOpen(false)}
-        onToggle={() => setAiAssistantOpen(!aiAssistantOpen)}
-      />
-
       {/* Module 10: Command Palette (Ctrl+K) */}
       <CommandPalette
         isOpen={commandPaletteOpen}
         onClose={() => setCommandPaletteOpen(false)}
         onOpenTerminal={() => setTerminalOpen(true)}
-        onOpenAI={() => setAiAssistantOpen(true)}
         onOpenResume={() => setResumeOpen(true)}
       />
 

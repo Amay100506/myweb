@@ -11,10 +11,9 @@ import { sound } from "@/lib/sound";
 interface HeroSectionProps {
   onOpenResume: () => void;
   onOpenTerminal: () => void;
-  onOpenAI: () => void;
 }
 
-export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSectionProps) {
+export function HeroSection({ onOpenResume, onOpenTerminal }: HeroSectionProps) {
   const [show3D, setShow3D] = useState(true);
   const [isFreeOrbit, setIsFreeOrbit] = useState(false);
 

@@ -4,7 +4,6 @@ import { useEffect, useState, useMemo } from "react";
 import { 
   Search, 
   Terminal, 
-  Bot, 
   FileText, 
   Mail, 
   Volume2, 
@@ -38,7 +37,6 @@ interface CommandPaletteProps {
   isOpen: boolean;
   onClose: () => void;
   onOpenTerminal?: () => void;
-  onOpenAI?: () => void;
   onOpenResume?: () => void;
 }
 
@@ -46,7 +44,6 @@ export function CommandPalette({
   isOpen,
   onClose,
   onOpenTerminal,
-  onOpenAI,
   onOpenResume,
 }: CommandPaletteProps) {
   const [query, setQuery] = useState("");
@@ -154,17 +151,6 @@ export function CommandPalette({
         },
       },
       // Actions
-      {
-        id: "action-ai",
-        title: "Launch AMAY AI Assistant",
-        category: "Actions",
-        icon: Bot,
-        description: "Interactive neural assistant for Amay's portfolio",
-        action: () => {
-          onClose();
-          onOpenAI?.();
-        },
-      },
       {
         id: "action-terminal",
         title: "Launch Command Center Terminal",
@@ -318,7 +304,7 @@ export function CommandPalette({
     });
 
     return items;
-  }, [onClose, onOpenAI, onOpenTerminal, onOpenResume]);
+  }, [onClose, onOpenTerminal, onOpenResume]);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return commands;

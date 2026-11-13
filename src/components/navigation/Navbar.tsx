@@ -6,7 +6,6 @@ import Link from "next/link";
 import { 
   Terminal, 
   Search, 
-  Bot, 
   FileText, 
   Menu, 
   X, 
@@ -23,7 +22,6 @@ import { useI18n } from "@/context/I18nContext";
 interface NavbarProps {
   onOpenCommandPalette: () => void;
   onOpenTerminal: () => void;
-  onOpenAI: () => void;
   onOpenResume: () => void;
   onOpenSoundControls?: () => void;
 }
@@ -31,7 +29,6 @@ interface NavbarProps {
 export function Navbar({
   onOpenCommandPalette,
   onOpenTerminal,
-  onOpenAI,
   onOpenResume,
   onOpenSoundControls,
 }: NavbarProps) {
@@ -178,19 +175,6 @@ export function Navbar({
             <span className="hidden md:inline text-[11px]">CLI</span>
           </button>
 
-          {/* AI Assistant Button */}
-          <button
-            onClick={() => {
-              sound.playModalOpen();
-              onOpenAI();
-            }}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-purple-500/40 bg-purple-950/30 hover:bg-purple-900/40 text-xs font-mono text-purple-200 transition-colors"
-            title="Launch AMAY AI Assistant"
-          >
-            <Bot className="w-3.5 h-3.5 text-cyan-400" />
-            <span className="text-[11px] font-semibold">AMAY AI</span>
-          </button>
-
           {/* Resume Studio & Direct Download */}
           <div className="flex items-center rounded-md border border-cyan-500/40 bg-cyan-950/20 overflow-hidden">
             <button
@@ -282,16 +266,6 @@ export function Navbar({
             >
               <Terminal className="w-3.5 h-3.5" />
               <span>CLI Terminal</span>
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAI();
-              }}
-              className="flex items-center justify-center gap-2 p-2 rounded bg-purple-950/50 border border-purple-500/40 text-purple-200"
-            >
-              <Bot className="w-3.5 h-3.5 text-cyan-400" />
-              <span>AMAY AI</span>
             </button>
             <button
               onClick={() => {
