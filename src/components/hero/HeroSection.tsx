@@ -1,0 +1,144 @@
+"use client";
+
+import { useState } from "react";
+import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight } from "lucide-react";
+import { PORTFOLIO_DATA } from "@/data/portfolioData";
+import { HeroCanvas } from "../three/HeroCanvas";
+import { TelemetryHUD } from "../common/TelemetryHUD";
+import { sound } from "@/lib/sound";
+
+interface HeroSectionProps {
+  onOpenResume: () => void;
+  onOpenTerminal: () => void;
+  onOpenAI: () => void;
+}
+
+export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSectionProps) {
+  const [show3D, setShow3D] = useState(true);
+
+  const scrollTo = (id: string) => {
+    sound.playClick();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 pt-24 pb-12 overflow-hidden cyber-grid"
+    >
+      {/* 3D Background Canvas */}
+      {show3D && <HeroCanvas />}
+
+      {/* Atmospheric Radial Gradient Lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-900/15 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-900/10 blur-[120px] pointer-events-none rounded-full" />
+
+      {/* Hero Content Container */}
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+        {/* Top Status & Telemetry HUD */}
+        <div className="mb-6 flex flex-col items-center gap-3">
+          <TelemetryHUD />
+        </div>
+
+        {/* Tactical Subheading / Monogram Tag */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 mb-6 shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <span>TECHFEST-INSPIRED IMMERSIVE ARCHITECTURE</span>
+          <span className="text-slate-500">•</span>
+          <span className="text-cyan-400">v2.5</span>
+        </div>
+
+        {/* Main Name Heading */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 font-mono">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-purple-300 drop-shadow-[0_0_35px_rgba(168,85,247,0.35)]">
+            {PORTFOLIO_DATA.personal.heroTitle}
+          </span>
+        </h1>
+
+        {/* Tagline Statement */}
+        <p className="max-w-2xl text-base sm:text-lg md:text-xl text-slate-300 font-sans leading-relaxed mb-8">
+          {PORTFOLIO_DATA.personal.tagline}
+        </p>
+
+        {/* Primary Interactive CTAs */}
+        <div className="flex flex-wrap items-center justify-center gap-3.5 mb-12">
+          {/* View Projects */}
+          <button
+            onClick={() => scrollTo("projects")}
+            className="group relative px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-lg shadow-purple-600/30 transition-all duration-200 flex items-center gap-2"
+          >
+            <Code2 className="w-4 h-4 text-cyan-300" />
+            <span>View Projects</span>
+            <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          {/* Explore Portfolio */}
+          <button
+            onClick={() => scrollTo("about")}
+            className="px-6 py-3 rounded-lg border border-purple-500/40 bg-slate-950/70 hover:bg-purple-950/40 text-purple-200 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200"
+          >
+            Explore Portfolio
+          </button>
+
+          {/* Download Resume */}
+          <button
+            onClick={() => {
+              sound.playClick();
+              onOpenResume();
+            }}
+            className="px-6 py-3 rounded-lg border border-cyan-500/40 bg-slate-950/70 hover:bg-cyan-950/30 text-cyan-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2"
+          >
+            <FileText className="w-4 h-4 text-cyan-400" />
+            <span>Resume</span>
+          </button>
+
+          {/* Contact Me */}
+          <button
+            onClick={() => scrollTo("contact")}
+            className="px-6 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:border-slate-700 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2"
+          >
+            <Send className="w-3.5 h-3.5 text-slate-400" />
+            <span>Contact Me</span>
+          </button>
+        </div>
+
+        {/* Spatial Zone Quick Switcher */}
+        <div className="w-full max-w-3xl hidden md:flex flex-wrap justify-center gap-2 pt-4 border-t border-purple-500/10 text-xs font-mono text-slate-400">
+          <span className="text-[11px] text-purple-400 uppercase tracking-widest mr-2 self-center">
+            SPATIAL SECTORS:
+          </span>
+          {PORTFOLIO_DATA.navZones.slice(1, 6).map((zone) => (
+            <button
+              key={zone.id}
+              onClick={() => scrollTo(zone.id)}
+              className="px-2.5 py-1 rounded bg-slate-900/60 hover:bg-purple-950/40 border border-slate-800/80 hover:border-purple-500/40 text-[11px] text-slate-400 hover:text-cyan-300 transition-colors"
+            >
+              [{zone.label}]
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* 3D Visual Controls & Skip Toggle */}
+      <div className="absolute bottom-4 right-4 z-20 hidden lg:flex items-center gap-2 text-[10px] font-mono text-slate-500">
+        <button
+          onClick={() => {
+            sound.playClick();
+            setShow3D(!show3D);
+          }}
+          className="px-2 py-1 rounded border border-slate-800 bg-slate-950/80 hover:text-slate-300"
+        >
+          {show3D ? "3D Engine: Active (Toggle)" : "3D Engine: Low-Power (Toggle)"}
+        </button>
+      </div>
+
+      {/* Scroll Down Prompt */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none opacity-70 animate-bounce">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+          Scroll to Inspect
+        </span>
+        <ArrowDown className="w-4 h-4 text-purple-400" />
+      </div>
+    </section>
+  );
+}
