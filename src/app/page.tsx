@@ -121,31 +121,21 @@ export default function Home() {
         onOpenSoundControls={() => setSoundControlsOpen(true)}
       />
 
-      {/* Main Hero Cinematic Nexus with Theatre.js & Postprocessing */}
+      {/* Main Hero Cinematic Nexus with Three.js & Postprocessing */}
       <HeroSection
         onOpenResume={() => setResumeOpen(true)}
         onOpenTerminal={() => setTerminalOpen(true)}
         onOpenAI={() => setAiAssistantOpen(true)}
       />
 
-      {/* Module 1: Personal Digital Command Center */}
+      {/* Featured Projects Showcases */}
       <div className="gsap-reveal">
-        <DigitalCommandCenter />
+        <ProjectsSection onCompareProjects={handleOpenCompare} />
       </div>
 
-      {/* About & Education */}
-      <div className="gsap-reveal">
-        <AboutSection />
-      </div>
-
-      {/* Technical Skills Constellation */}
+      {/* Technical Skills Matrix */}
       <div className="gsap-reveal">
         <SkillsSection />
-      </div>
-
-      {/* Module 3: Interactive 3D Technology Universe */}
-      <div className="gsap-reveal">
-        <TechUniverseSection />
       </div>
 
       {/* 360° Spatial Dimension & Turntable Studio */}
@@ -153,24 +143,9 @@ export default function Home() {
         <Spatial360Section />
       </div>
 
-      {/* Flagship Projects Showcases & Case Studies */}
+      {/* Interactive 3D Technology Universe */}
       <div className="gsap-reveal">
-        <ProjectsSection onCompareProjects={handleOpenCompare} />
-      </div>
-
-      {/* Module 5: Journey Time Machine */}
-      <div className="gsap-reveal">
-        <JourneySection />
-      </div>
-
-      {/* Professional Experience & Systems Trajectory */}
-      <div className="gsap-reveal">
-        <ExperienceSection />
-      </div>
-
-      {/* GitHub Real-Time Telemetry & Repos */}
-      <div className="gsap-reveal">
-        <GitHubSection />
+        <TechUniverseSection />
       </div>
 
       {/* Verified Certifications */}
@@ -178,7 +153,7 @@ export default function Home() {
         <CertificationsSection />
       </div>
 
-      {/* Transmission Line / Contact with Canvas Confetti */}
+      {/* Direct Contact */}
       <div className="gsap-reveal">
         <ContactSection onOpenResume={() => setResumeOpen(true)} />
       </div>

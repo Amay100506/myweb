@@ -112,8 +112,8 @@ export default function ContactPage() {
           <h1 className="text-4xl sm:text-6xl font-extrabold font-mono tracking-tight text-white">
             Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">Touch</span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 font-sans max-w-2xl leading-relaxed">
-            Whether you&apos;re looking to hire for Cloud & DevOps roles, discuss infrastructure architectures, or simply talk tech over chai in Pune—my inbox is always open.
+          <p className="text-base sm:text-lg text-slate-300 font-sans max-w-xl leading-relaxed">
+            Open for Cloud & DevOps engineering roles, architecture discussions, and collaborations.
           </p>
         </div>
 

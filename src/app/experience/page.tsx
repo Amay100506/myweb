@@ -50,8 +50,8 @@ export default function ExperiencePage() {
           <h1 className="text-4xl sm:text-6xl font-extrabold font-mono tracking-tight text-white">
             Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Experience</span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 font-sans max-w-3xl leading-relaxed">
-            Corporate client operations, university student volunteer leadership, and hands-on cloud systems engineering. Real-world communication, CRM data management, and operational discipline.
+          <p className="text-base sm:text-lg text-slate-300 font-sans max-w-2xl leading-relaxed">
+            Cloud systems engineering, venture leadership at Zaxsat Technologies, and client operations.
           </p>
         </div>
 

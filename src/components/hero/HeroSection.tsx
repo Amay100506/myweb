@@ -36,58 +36,47 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-900/10 blur-[120px] pointer-events-none rounded-full" />
 
       {/* Hero Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-        {/* Top Status & Telemetry HUD */}
-        <div className="mb-6 flex flex-col items-center gap-3">
-          <TelemetryHUD />
-        </div>
-
-        {/* Human & Professional Headline Badge */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>CLOUD & DEVOPS ENGINEER • AWS CERTIFIED PRACTITIONER</span>
-            <span className="text-slate-500">•</span>
-            <span className="text-emerald-400">PUNE, IN</span>
-          </div>
-
-          {/* Direct Company Badge & Link */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+        {/* Sleek Minimalist Status Pill */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/30 bg-purple-950/30 text-xs font-mono text-purple-200 mb-6 shadow-sm backdrop-blur-sm">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>Cloud & DevOps Engineer</span>
+          <span className="text-slate-600">•</span>
+          <span>AWS Certified</span>
+          <span className="text-slate-600">•</span>
           <a
             href="https://www.zaxsat.online"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => sound.playClick()}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/40 bg-amber-950/30 hover:bg-amber-900/40 text-xs font-mono text-amber-300 transition-all shadow-[0_0_15px_rgba(245,158,11,0.15)] group"
-            title="Visit Zaxsat Technologies (www.zaxsat.online)"
+            className="text-amber-300 hover:text-amber-200 underline decoration-amber-400/50 hover:decoration-amber-300 transition-colors"
           >
-            <Building2 className="w-3.5 h-3.5 text-amber-400" />
-            <span>Company: <strong className="text-white underline decoration-amber-400">Zaxsat Technologies</strong> (www.zaxsat.online)</span>
-            <ExternalLink className="w-3 h-3 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            Zaxsat Technologies ↗
           </a>
         </div>
 
         {/* Main Name Heading */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 font-mono">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-purple-300 drop-shadow-[0_0_35px_rgba(168,85,247,0.35)]">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-4 font-mono">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-purple-300 drop-shadow-[0_0_35px_rgba(168,85,247,0.35)]">
             {PORTFOLIO_DATA.personal.heroTitle}
           </span>
         </h1>
 
         {/* Tagline Statement */}
-        <p className="max-w-2xl text-base sm:text-lg md:text-xl text-slate-300 font-sans leading-relaxed mb-8">
+        <p className="max-w-xl text-base sm:text-lg text-slate-300 font-sans leading-relaxed mb-8">
           {PORTFOLIO_DATA.personal.tagline}
         </p>
 
         {/* Primary Interactive CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-3.5 mb-8">
           {/* Explore Projects */}
           <Link
             href="/projects"
             onClick={() => sound.playClick()}
-            className="group relative px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-lg shadow-purple-600/30 transition-all duration-200 flex items-center gap-2"
+            className="group px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-lg shadow-purple-600/30 transition-all duration-200 flex items-center gap-2"
           >
             <Code2 className="w-4 h-4 text-cyan-300" />
-            <span>Explore Projects</span>
+            <span>View Projects</span>
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
 
@@ -97,7 +86,7 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
             onClick={() => sound.playClick()}
             className="px-6 py-3 rounded-lg border border-purple-500/40 bg-slate-950/70 hover:bg-purple-950/40 text-purple-200 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200"
           >
-            About My Story
+            About Me
           </Link>
 
           {/* Direct Download Resume */}
@@ -108,45 +97,8 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
             className="px-5 py-3 rounded-lg border border-cyan-500/50 bg-cyan-950/40 hover:bg-cyan-900/40 text-cyan-200 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2 shadow-lg shadow-cyan-950/40"
           >
             <Download className="w-4 h-4 text-cyan-400" />
-            <span>Download Resume</span>
+            <span>Resume (PDF)</span>
           </a>
-
-          {/* Journal */}
-          <Link
-            href="/journal"
-            onClick={() => sound.playClick()}
-            className="px-4 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-1.5"
-            title="Field Notes & Reflections"
-          >
-            <BookOpen className="w-3.5 h-3.5 text-pink-400" />
-            <span>Journal</span>
-          </Link>
-
-          {/* Contact Me */}
-          <Link
-            href="/contact"
-            onClick={() => sound.playClick()}
-            className="px-5 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:border-slate-700 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2"
-          >
-            <Send className="w-3.5 h-3.5 text-slate-400" />
-            <span>Contact</span>
-          </Link>
-        </div>
-
-        {/* Spatial Zone Quick Switcher */}
-        <div className="w-full max-w-3xl hidden md:flex flex-wrap justify-center gap-2 pt-4 border-t border-purple-500/10 text-xs font-mono text-slate-400">
-          <span className="text-[11px] text-purple-400 uppercase tracking-widest mr-2 self-center">
-            SPATIAL SECTORS:
-          </span>
-          {PORTFOLIO_DATA.navZones.slice(1, 6).map((zone) => (
-            <button
-              key={zone.id}
-              onClick={() => scrollTo(zone.id)}
-              className="px-2.5 py-1 rounded bg-slate-900/60 hover:bg-purple-950/40 border border-slate-800/80 hover:border-purple-500/40 text-[11px] text-slate-400 hover:text-cyan-300 transition-colors"
-            >
-              [{zone.label}]
-            </button>
-          ))}
         </div>
       </div>
 

@@ -120,12 +120,6 @@ export function SkillsSection() {
                   <span>Proficiency</span>
                   <span className="text-cyan-400 font-semibold">{skill.proficiency}%</span>
                 </div>
-
-                {skill.description && (
-                  <p className="mt-2 text-[11px] text-slate-400 line-clamp-2 leading-relaxed font-sans">
-                    {skill.description}
-                  </p>
-                )}
               </div>
             );
           })}

@@ -122,44 +122,19 @@ export function ProjectsSection({ onCompareProjects }: ProjectsSectionProps) {
                   </div>
 
                   {/* Title & Tagline */}
-                  <h3 className="text-2xl font-bold font-mono text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold font-mono text-white group-hover:text-cyan-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono text-purple-400 mt-1 mb-3">
+                  <p className="text-xs font-mono text-purple-400 mt-1 mb-2">
                     {project.tagline}
                   </p>
-                  <p className="text-sm text-slate-300 font-sans leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mb-4 line-clamp-2">
                     {project.description}
                   </p>
 
-                  {/* Problem Statement Callout */}
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 mb-6 text-xs">
-                    <span className="font-mono text-[10px] text-cyan-400 uppercase tracking-wider block mb-1">
-                      Problem Solved
-                    </span>
-                    <p className="text-slate-400 leading-relaxed font-sans">
-                      {project.problemStatement}
-                    </p>
-                  </div>
-
-                  {/* Architectural Highlights */}
-                  <div className="space-y-2 mb-6">
-                    <span className="font-mono text-[10px] text-purple-400 uppercase tracking-wider block">
-                      Architectural Pillars
-                    </span>
-                    <ul className="space-y-1.5 text-xs text-slate-300 font-sans">
-                      {project.technicalArchitecture.slice(0, 3).map((arch, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                          <span className="leading-snug">{arch}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
                   {/* Tech Stack Badges */}
                   <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 6).map((tech) => (
                       <span
                         key={tech}
                         className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300 font-mono text-[11px]"

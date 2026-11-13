@@ -4,7 +4,7 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Amay Kumar",
     heroTitle: "AMAY KUMAR",
-    tagline: "Engineering scalable cloud infrastructure, automated CI/CD pipelines, container orchestration, and resilient software systems.",
+    tagline: "Building scalable cloud infrastructure & automated systems.",
     headline: "Cloud & DevOps Engineer | AWS Certified Cloud Practitioner",
     location: "Pune 411057, Maharashtra, India",
     education: {
@@ -19,9 +19,8 @@ export const PORTFOLIO_DATA = {
       },
     },
     bio: [
-      "I'm Amay Kumar, an Engineering student with a strong interest in Cloud Computing, DevOps, and emerging technologies.",
-      "I am an AWS Certified Cloud Practitioner with a passion for learning, problem-solving, and exploring real-world applications of cloud technology.",
-      "I'm continuously developing my technical skills through hands-on projects and practical learning, with the goal of building a successful career in Cloud and DevOps Engineering."
+      "Engineering student at Dr. D. Y. Patil Vidyapeeth Pune & AWS Certified Cloud Practitioner.",
+      "Founder of Zaxsat Technologies (www.zaxsat.online), building modern cloud platforms, container workflows, and automated CI/CD."
     ],
     social: {
       github: "https://github.com/Amay100506",
@@ -276,13 +275,13 @@ export const PORTFOLIO_DATA = {
       period: "2025 – Present",
       type: "Venture / Technology Firm",
       summary:
-        "Directing cloud infrastructure, modern web architectures, DevOps automation, and scalable client solutions at Zaxsat Technologies (www.zaxsat.online).",
+        "Building automated cloud infrastructure, container workflows, and modern web architectures.",
       responsibilities: [
-        "Architecting automated cloud deployments and scalable containerized infrastructure for modern digital solutions.",
-        "Designing resilient CI/CD pipelines, Docker container systems, and secure cloud networking architectures.",
-        "Directing technology strategy, client platform deployments, and technical implementation at Zaxsat Technologies (www.zaxsat.online).",
+        "Architect automated cloud deployments using Terraform, Docker, and AWS.",
+        "Design scalable containerized microservices and continuous delivery pipelines.",
+        "Lead technology strategy and client platform deployments at Zaxsat Technologies.",
       ],
-      skillsUsed: ["Cloud Architecture", "AWS", "DevOps", "Docker", "Terraform", "CI/CD", "Full-Stack Systems"],
+      skillsUsed: ["AWS", "DevOps", "Docker", "Terraform", "CI/CD", "Linux"],
       verified: true,
     },
     {
@@ -294,13 +293,12 @@ export const PORTFOLIO_DATA = {
       period: "04/2026 – 06/2026",
       type: "Professional Experience",
       summary:
-        "Recorded client details and sales activity in CRM systems. Built strong, professional relationships through identification of client needs, which increased overall sales and opportunities.",
+        "Managed CRM client records and communication to support sales growth.",
       responsibilities: [
-        "Recorded client details, pipeline stages, and sales activity in CRM systems.",
-        "Built strong, professional relationships through proactive identification of client needs, expanding sales opportunities.",
-        "Managed operational correspondence and maintained organized client data communication workflows.",
+        "Tracked sales activity and pipeline stages within CRM systems.",
+        "Identified client needs to expand sales opportunities.",
       ],
-      skillsUsed: ["CRM Systems", "Client Relationship Management", "Communication", "Data Tracking"],
+      skillsUsed: ["CRM Systems", "Client Relations", "Communication"],
       verified: true,
     },
     {
@@ -312,13 +310,12 @@ export const PORTFOLIO_DATA = {
       period: "10/2025 – 04/2026",
       type: "Student Volunteer",
       summary:
-        "Assisted with answering telephone calls, managing databases, and drafting correspondence. Provided technical support and instructional assistance to help students succeed.",
+        "Handled institutional correspondence, database records, and student technical support.",
       responsibilities: [
-        "Assisted with answering incoming inquiries, managing databases, and drafting formal institutional correspondence.",
-        "Provided technical support and instructional assistance to help students navigate systems and succeed.",
-        "Coordinated digital records and assisted university faculty with administrative operational logistics.",
+        "Managed database records and institutional communications.",
+        "Provided technical support and guidance to students.",
       ],
-      skillsUsed: ["Database Management", "Technical Support", "Instructional Assistance", "Documentation"],
+      skillsUsed: ["Database Management", "Technical Support", "Communication"],
       verified: true,
     },
   ] as ExperienceItem[],
@@ -370,11 +367,8 @@ export const PORTFOLIO_DATA = {
       cloud: "AWS Free Tier & Terraform CLI",
     },
     story: [
-      "I grew up in Bareilly, Uttar Pradesh, studying at Kendriya Vidyalaya AFS Bareilly. Growing up around an air force base gave me an appreciation for disciplined operations and precision. When I moved to Pune to pursue my Bachelor of Computer Applications at Dr. D. Y. Patil Vidyapeeth, I wanted to understand how software powers modern services at scale.",
-      "My turning point was discovering cloud infrastructure and containerization. Rather than treating computers like isolated black boxes, I became fascinated by how servers across availability zones coordinate traffic, how Docker wraps entire environments in reproducible images, and how Terraform lets you declare an entire multi-tier cloud topology in clean code.",
-      "Earning the AWS Certified Cloud Practitioner (CLF-C02) credential validated my foundational knowledge, but the real fun has been getting my hands dirty—debugging broken container builds, configuring VPC subnets, and deploying microservices on Kubernetes.",
-      "Alongside my studies, I founded Zaxsat Technologies (www.zaxsat.online), where I help businesses design resilient cloud architectures, automate deployments, and craft modern digital platforms.",
-      "I'm an engineer who values curiosity, practical problem-solving, and continuous learning above all else."
+      "Originally from Bareilly and now pursuing BCA at Dr. D. Y. Patil Vidyapeeth in Pune, my focus is on cloud infrastructure, containerization, and automation.",
+      "As an AWS Certified Cloud Practitioner and Founder of Zaxsat Technologies (www.zaxsat.online), I design automated Terraform pipelines, Docker environments, and resilient software architectures."
     ],
   },
 
