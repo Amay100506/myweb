@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUp, Mail, Sparkles, Terminal } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
@@ -31,62 +32,52 @@ export function Footer({ onOpenTerminal, onOpenCommandPalette }: FooterProps) {
           </div>
         </div>
 
-        {/* Quick Links & Shortcuts */}
+        {/* Multi-Page Navigation & Quick Links */}
         <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
-          <button
-            onClick={() => {
-              sound.playClick();
-              onOpenCommandPalette();
-            }}
-            className="hover:text-cyan-300 transition-colors"
-          >
-            [Search (Ctrl+K)]
-          </button>
-          <button
-            onClick={() => {
-              sound.playModalOpen();
-              onOpenTerminal();
-            }}
-            className="hover:text-purple-300 transition-colors"
-          >
-            [CLI Terminal]
-          </button>
+          <Link href="/about" className="hover:text-cyan-300 transition-colors">
+            About
+          </Link>
+          <Link href="/projects" className="hover:text-cyan-300 transition-colors">
+            Projects
+          </Link>
+          <Link href="/experience" className="hover:text-cyan-300 transition-colors">
+            Experience
+          </Link>
+          <Link href="/skills" className="hover:text-cyan-300 transition-colors">
+            Skills
+          </Link>
+          <Link href="/journal" className="hover:text-cyan-300 transition-colors">
+            Journal
+          </Link>
+          <Link href="/resume" className="hover:text-cyan-300 transition-colors">
+            Resume
+          </Link>
+          <Link href="/contact" className="hover:text-cyan-300 transition-colors">
+            Contact
+          </Link>
           <a
             href="/resume.pdf"
             download="Amay_Kumar_Resume.pdf"
             onClick={() => sound.playClick()}
             className="text-cyan-400 hover:text-cyan-200 font-bold transition-colors"
           >
-            [Download Resume (PDF)]
+            [PDF]
           </a>
-          <a
-            href={PORTFOLIO_DATA.personal.social.github}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-white transition-colors"
+          <button
+            onClick={() => {
+              sound.playClick();
+              onOpenCommandPalette();
+            }}
+            className="text-slate-500 hover:text-slate-300 transition-colors"
           >
-            GitHub
-          </a>
-          <a
-            href={PORTFOLIO_DATA.personal.social.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={`mailto:${PORTFOLIO_DATA.personal.social.email}`}
-            className="hover:text-white transition-colors"
-          >
-            Email
-          </a>
-          <a
+            [⌘K]
+          </button>
+          <Link
             href="/admin"
-            className="text-slate-500 hover:text-purple-300 transition-colors"
+            className="text-slate-600 hover:text-purple-300 transition-colors"
           >
-            [CMS Admin]
-          </a>
+            [Admin]
+          </Link>
         </div>
 
         {/* Return to top */}

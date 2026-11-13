@@ -1,4 +1,4 @@
-import { Project, SkillCategory, ExperienceItem, CertificationItem, NavZone } from "@/types";
+import { Project, SkillCategory, ExperienceItem, CertificationItem, NavZone, JournalPost, NowStatus } from "@/types";
 
 export const PORTFOLIO_DATA = {
   personal: {
@@ -314,6 +314,107 @@ export const PORTFOLIO_DATA = {
       ],
     },
   ] as CertificationItem[],
+
+  now: {
+    location: "Pune, Maharashtra (411057)",
+    studying: "Bachelor of Computer Applications (BCA) 2nd Year @ Dr. D. Y. Patil Vidyapeeth, Pune (CGPA: 8.0)",
+    learning: "Terraform reusable modules, Kubernetes networking (Ingress, Services, CNI), and AWS EKS workloads.",
+    reading: "Designing Data-Intensive Applications by Martin Kleppmann",
+    listeningTo: "Tycho, Solar Fields & Synthwave while debugging",
+    coffeeFuel: "Hot Masala Chai in the morning & filter coffee during late-night coding",
+    lastUpdated: "November 2026",
+  } as NowStatus,
+
+  humanDetails: {
+    origin: "Bareilly, Uttar Pradesh ➔ Pune, Maharashtra",
+    quote: "Good engineering isn't about complex buzzwords. It's about quiet reliability—building systems so resilient that nobody notices because they simply work.",
+    hobbies: [
+      "Exploring street food and cafe spots around Pune",
+      "Playing badminton on weekends with college batchmates",
+      "Customizing Linux dotfiles, Neovim keymaps, and terminal prompts",
+      "Reading tech post-mortems and distributed systems whitepapers",
+      "Listening to ambient electronic music while building projects",
+    ],
+    workspace: {
+      os: "Linux (Fedora/Ubuntu) & Windows 11 Dual-Boot",
+      terminal: "Kitty / Ghostty with Starship prompt & zsh",
+      editor: "VS Code & Neovim with Dracula/Catppuccin theme",
+      cloud: "AWS Free Tier & Terraform CLI",
+    },
+    story: [
+      "I grew up in Bareilly, Uttar Pradesh, studying at Kendriya Vidyalaya AFS Bareilly. Growing up around an air force base gave me an appreciation for disciplined operations and precision. When I moved to Pune to pursue my Bachelor of Computer Applications at Dr. D. Y. Patil Vidyapeeth, I wanted to understand how software powers modern services at scale.",
+      "My turning point was discovering cloud infrastructure and containerization. Rather than treating computers like isolated black boxes, I became fascinated by how servers across availability zones coordinate traffic, how Docker wraps entire environments in reproducible images, and how Terraform lets you declare an entire multi-tier cloud topology in clean code.",
+      "Earning the AWS Certified Cloud Practitioner (CLF-C02) credential validated my foundational knowledge, but the real fun has been getting my hands dirty—debugging broken container builds, configuring VPC subnets, and deploying microservices on Kubernetes.",
+      "I'm an engineer who values curiosity, practical problem-solving, and continuous learning above all else."
+    ],
+  },
+
+  journal: [
+    {
+      slug: "passing-aws-clf-c02-as-student",
+      title: "How I Passed the AWS Certified Cloud Practitioner (CLF-C02) Exam as a College Student",
+      subtitle: "A practical, honest guide to studying cloud fundamentals without burning through money on AWS bills.",
+      publishedAt: "October 2025",
+      readingTime: "5 min read",
+      category: "Cloud Architecture",
+      summary: "My realistic preparation strategy, key architectural concepts you must master, and practical tips for navigating AWS free-tier traps while studying for the CLF-C02 certification.",
+      content: [
+        "When I first started studying for the AWS Certified Cloud Practitioner exam, I was overwhelmed by the sheer number of three-letter acronyms: EC2, S3, IAM, VPC, RDS, EBS, ELB. Every tutorial seemed to assume you were already running a Fortune 500 company.",
+        "As a BCA student paying with my own pocket money, my first rule was simple: zero unexpected AWS bills. I immediately set up AWS Budgets with an alert at $1.00 and enabled CloudWatch alarms.",
+        "The three areas that really mattered for the exam were: 1) The Shared Responsibility Model—knowing what AWS secures versus what you are responsible for; 2) Identity & Access Management (IAM)—mastering the principle of least privilege; and 3) Core Networking—understanding how VPCs, subnets, and Internet Gateways connect.",
+        "Passing the exam on my first attempt gave me the confidence that cloud computing wasn't magic—it was just disciplined systems engineering waiting to be understood."
+      ],
+      tags: ["AWS", "CLF-C02", "Certification", "Cloud Computing", "Student Guide"],
+    },
+    {
+      slug: "why-i-fell-in-love-with-terraform",
+      title: "Why I Fell in Love with Terraform & Infrastructure as Code",
+      subtitle: "Moving from clicking buttons in the AWS Console to declaring repeatable infrastructure in code.",
+      publishedAt: "September 2025",
+      readingTime: "6 min read",
+      category: "DevOps & Tooling",
+      summary: "Why clickOps is a trap, how declarative HCL changed how I think about systems, and how I built my first automated infrastructure provisioning pipeline.",
+      content: [
+        "Like most beginners, I started by clicking through the AWS Management Console. Want an EC2 instance? Click Launch Instance. Choose an AMI. Choose a key pair. Add a security group. Click Launch.",
+        "It worked until I had to tear it all down to avoid charges—and then rebuild it two days later. I forgot which port I had opened, missed a subnet tag, and spent two hours wondering why my SSH connection timed out.",
+        "That's when I discovered HashiCorp Terraform. Being able to write `main.tf`, define my VPC, subnets, and EC2 instances as code, run `terraform plan`, and see exactly what will be created in seconds was a revelation.",
+        "Terraform taught me that infrastructure should be version-controlled, auditable, and disposable. If something breaks, don't patch it manually—destroy it and let Terraform re-provision a pristine environment."
+      ],
+      tags: ["Terraform", "IaC", "AWS", "DevOps", "Automation"],
+    },
+    {
+      slug: "bareilly-to-pune-tech-journey",
+      title: "From Bareilly to Pune: What Moving Cities Taught Me About Tech and Independence",
+      subtitle: "Reflections on transitioning from school in northern India to studying computer applications in Maharashtra's tech hub.",
+      publishedAt: "August 2025",
+      readingTime: "4 min read",
+      category: "Student Journey",
+      summary: "Personal reflections on adapting to Pune's vibrant engineering culture, managing college academics, and building technical side projects.",
+      content: [
+        "Moving 1,400 kilometers from Bareilly to Pune was my first real lesson in adaptability. Pune has an infectious energy—every other person you meet is building a startup, preparing for a certification, or hacking on open source.",
+        "Studying at Dr. D. Y. Patil Vidyapeeth gave me a structured academic foundation in algorithms, C++, and database design, but I quickly realized that university lectures only give you the map; you have to walk the terrain yourself.",
+        "I started spending my evenings setting up Linux home labs, experimenting with Docker containers, and reading documentation. Balancing college assignments, exams, and hands-on projects taught me time management and self-reliance.",
+        "Pune has become a second home, and the tech community here constantly reminds me of how much there is still to learn and build."
+      ],
+      tags: ["Pune", "Personal Journey", "College Life", "DY Patil", "BCA"],
+    },
+    {
+      slug: "demystifying-docker-containers",
+      title: "What I Wish Someone Told Me on Day 1 of Learning Docker",
+      subtitle: "Demystifying containers, images, layers, and volumes for anyone tired of 'it works on my machine'.",
+      publishedAt: "July 2025",
+      readingTime: "5 min read",
+      category: "Engineering Lessons",
+      summary: "A practical breakdown of Docker fundamentals without the corporate jargon: understanding why containers are not VMs and how to write lean multi-stage Dockerfiles.",
+      content: [
+        "'It works on my machine' is the oldest joke in software engineering, but it's not very funny when your project fails to run during an evaluation or a client presentation.",
+        "When I first learned Docker, people kept telling me 'containers are like lightweight virtual machines.' That analogy confused me for weeks. Containers aren't VMs—they're just isolated Linux processes sharing the host kernel with namespaces and cgroups.",
+        "Once that clicked, everything else fell into place: why images are built in cached layers, why `.dockerignore` is crucial to prevent leaking sensitive files, and why multi-stage builds are essential for keeping image sizes small.",
+        "Today, I containerize every single project I build before writing a single deployment script. It gives me the peace of mind that my code will run identically on my laptop, a colleague's machine, or an AWS EC2 instance."
+      ],
+      tags: ["Docker", "Containers", "DevOps", "Linux", "Best Practices"],
+    },
+  ] as JournalPost[],
 
   aiAssistant: {
     name: "AMAY AI",

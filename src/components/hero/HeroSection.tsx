@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight, Download } from "lucide-react";
+import Link from "next/link";
+import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight, Download, BookOpen } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { HeroCanvas } from "../three/HeroCanvas";
 import { TelemetryHUD } from "../common/TelemetryHUD";
@@ -41,12 +42,12 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
           <TelemetryHUD />
         </div>
 
-        {/* Tactical Subheading / Monogram Tag */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 mb-6 shadow-sm">
+        {/* Human & Professional Headline Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 mb-6 shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>TECHFEST-INSPIRED IMMERSIVE ARCHITECTURE</span>
+          <span>CLOUD & DEVOPS ENGINEER • AWS CERTIFIED PRACTITIONER</span>
           <span className="text-slate-500">•</span>
-          <span className="text-cyan-400">v2.5</span>
+          <span className="text-emerald-400">PUNE, IN</span>
         </div>
 
         {/* Main Name Heading */}
@@ -63,23 +64,25 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
 
         {/* Primary Interactive CTAs */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 mb-12">
-          {/* View Projects */}
-          <button
-            onClick={() => scrollTo("projects")}
+          {/* Explore Projects */}
+          <Link
+            href="/projects"
+            onClick={() => sound.playClick()}
             className="group relative px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-mono text-xs uppercase tracking-wider font-semibold shadow-lg shadow-purple-600/30 transition-all duration-200 flex items-center gap-2"
           >
             <Code2 className="w-4 h-4 text-cyan-300" />
-            <span>View Projects</span>
+            <span>Explore Projects</span>
             <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
 
-          {/* Explore Portfolio */}
-          <button
-            onClick={() => scrollTo("about")}
+          {/* About Me */}
+          <Link
+            href="/about"
+            onClick={() => sound.playClick()}
             className="px-6 py-3 rounded-lg border border-purple-500/40 bg-slate-950/70 hover:bg-purple-950/40 text-purple-200 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200"
           >
-            Explore Portfolio
-          </button>
+            About My Story
+          </Link>
 
           {/* Direct Download Resume */}
           <a
@@ -92,27 +95,26 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
             <span>Download Resume</span>
           </a>
 
-          {/* Interactive Resume Studio */}
-          <button
-            onClick={() => {
-              sound.playClick();
-              onOpenResume();
-            }}
+          {/* Journal */}
+          <Link
+            href="/journal"
+            onClick={() => sound.playClick()}
             className="px-4 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-1.5"
-            title="Interactive Resume Studio"
+            title="Field Notes & Reflections"
           >
-            <FileText className="w-3.5 h-3.5 text-purple-400" />
-            <span>Studio</span>
-          </button>
+            <BookOpen className="w-3.5 h-3.5 text-pink-400" />
+            <span>Journal</span>
+          </Link>
 
           {/* Contact Me */}
-          <button
-            onClick={() => scrollTo("contact")}
-            className="px-6 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:border-slate-700 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2"
+          <Link
+            href="/contact"
+            onClick={() => sound.playClick()}
+            className="px-5 py-3 rounded-lg border border-slate-800 bg-slate-950/70 hover:border-slate-700 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 flex items-center gap-2"
           >
             <Send className="w-3.5 h-3.5 text-slate-400" />
-            <span>Contact Me</span>
-          </button>
+            <span>Contact</span>
+          </Link>
         </div>
 
         {/* Spatial Zone Quick Switcher */}

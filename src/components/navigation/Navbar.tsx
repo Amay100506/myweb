@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { 
   Terminal, 
   Search, 
@@ -47,16 +48,13 @@ export function Navbar({
   }, []);
 
   const navLinks = [
-    { name: t.nav.commandCenter, href: "#command-center" },
-    { name: t.nav.about, href: "#about" },
-    { name: t.nav.skills, href: "#skills" },
-    { name: t.nav.techUniverse, href: "#tech-universe" },
-    { name: "360° Spatial", href: "#spatial-360" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.journey, href: "#journey" },
-    { name: t.nav.experience, href: "#experience" },
-    { name: t.nav.github, href: "#github" },
-    { name: t.nav.contact, href: "#contact" },
+    { name: "About", href: "/about" },
+    { name: "Projects", href: "/projects" },
+    { name: "Experience", href: "/experience" },
+    { name: "Skills", href: "/skills" },
+    { name: "Journal", href: "/journal" },
+    { name: "360° Space", href: "/#spatial-360" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -69,8 +67,8 @@ export function Navbar({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand Monogram */}
-        <a
-          href="#hero"
+        <Link
+          href="/"
           onClick={() => sound.playClick()}
           className="flex items-center gap-3 group"
         >
@@ -88,15 +86,15 @@ export function Navbar({
               AMAY KUMAR
             </span>
             <span className="text-[10px] font-mono text-purple-400 block -mt-0.5">
-              TECHFEST NEXUS // DEV
+              CLOUD & DEVOPS ENGINEER
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => sound.playHover()}
@@ -104,7 +102,7 @@ export function Navbar({
             >
               <span>{link.name}</span>
               <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-purple-500 to-cyan-400 transition-all duration-200 group-hover:w-full" />
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -224,7 +222,7 @@ export function Navbar({
         <div className="sm:hidden bg-slate-950/95 border-b border-purple-500/20 px-4 py-4 space-y-3 font-mono text-xs">
           <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-800">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => {
@@ -234,7 +232,7 @@ export function Navbar({
                 className="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-slate-300 text-center"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 

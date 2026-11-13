@@ -83,3 +83,25 @@ export interface NavZone {
   description: string;
   coordinates: [number, number, number];
 }
+
+export interface JournalPost {
+  slug: string;
+  title: string;
+  subtitle: string;
+  publishedAt: string;
+  readingTime: string;
+  category: 'Cloud Architecture' | 'DevOps & Tooling' | 'Student Journey' | 'Engineering Lessons';
+  summary: string;
+  content: string[];
+  tags: string[];
+}
+
+export interface NowStatus {
+  location: string;
+  studying: string;
+  learning: string;
+  reading: string;
+  listeningTo: string;
+  coffeeFuel: string;
+  lastUpdated: string;
+}
