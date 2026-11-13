@@ -6,5 +6,29 @@
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
 
+[[redirects]]
+  from = "https://connectamay.online/*"
+  to = "https://connectamay.netlify.app/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://connectamay.online/*"
+  to = "https://connectamay.netlify.app/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.connectamay.online/*"
+  to = "https://connectamay.netlify.app/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.connectamay.online/*"
+  to = "https://connectamay.netlify.app/:splat"
+  status = 301
+  force = true
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
