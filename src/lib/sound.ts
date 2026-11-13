@@ -285,6 +285,80 @@ class SoundController {
       osc.stop(t + 0.075);
     } catch {}
   }
+
+  // Powerful Zaxsat Energy Surge & Ignition Sound
+  public playPowerZ() {
+    if (this.isMuted) return;
+    try {
+      this.initContext();
+      if (!this.ctx || !this.masterGain) return;
+      const t = this.ctx.currentTime;
+
+      // 1. Sub-bass power swell (from 45Hz to 110Hz)
+      const subOsc = this.ctx.createOscillator();
+      const subGain = this.ctx.createGain();
+      subOsc.type = "sine";
+      subOsc.frequency.setValueAtTime(45, t);
+      subOsc.frequency.exponentialRampToValueAtTime(110, t + 1.8);
+      subGain.gain.setValueAtTime(0.001, t);
+      subGain.gain.linearRampToValueAtTime(0.08, t + 1.2);
+      subGain.gain.exponentialRampToValueAtTime(0.001, t + 2.8);
+
+      subOsc.connect(subGain);
+      subGain.connect(this.masterGain);
+      subOsc.start(t);
+      subOsc.stop(t + 2.9);
+
+      // 2. Dual cyber laser sweeps (for the dual diagonal cuts)
+      [0.6, 1.2].forEach((offset, idx) => {
+        if (!this.ctx || !this.masterGain) return;
+        const laser = this.ctx.createOscillator();
+        const laserGain = this.ctx.createGain();
+        const filter = this.ctx.createBiquadFilter();
+
+        laser.type = "sawtooth";
+        laser.frequency.setValueAtTime(idx === 0 ? 300 : 450, t + offset);
+        laser.frequency.exponentialRampToValueAtTime(1400, t + offset + 0.35);
+
+        filter.type = "bandpass";
+        filter.frequency.setValueAtTime(600, t + offset);
+        filter.frequency.exponentialRampToValueAtTime(2800, t + offset + 0.35);
+        filter.Q.value = 4.0;
+
+        laserGain.gain.setValueAtTime(0.001, t + offset);
+        laserGain.gain.linearRampToValueAtTime(0.04, t + offset + 0.05);
+        laserGain.gain.exponentialRampToValueAtTime(0.001, t + offset + 0.4);
+
+        laser.connect(filter);
+        filter.connect(laserGain);
+        laserGain.connect(this.masterGain);
+
+        laser.start(t + offset);
+        laser.stop(t + offset + 0.42);
+      });
+
+      // 3. Climax harmonic chord ignition (C5, G5, C6 triumph lock)
+      const chordTime = t + 2.2;
+      [523.25, 659.25, 783.99, 1046.5].forEach((freq) => {
+        if (!this.ctx || !this.masterGain) return;
+        const osc = this.ctx.createOscillator();
+        const chordGain = this.ctx.createGain();
+
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq, chordTime);
+
+        chordGain.gain.setValueAtTime(0.001, chordTime);
+        chordGain.gain.linearRampToValueAtTime(0.03, chordTime + 0.08);
+        chordGain.gain.exponentialRampToValueAtTime(0.001, chordTime + 1.2);
+
+        osc.connect(chordGain);
+        chordGain.connect(this.masterGain);
+
+        osc.start(chordTime);
+        osc.stop(chordTime + 1.25);
+      });
+    } catch {}
+  }
 }
 
 export const sound = new SoundController();

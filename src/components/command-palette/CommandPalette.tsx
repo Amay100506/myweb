@@ -17,7 +17,8 @@ import {
   ExternalLink,
   Download,
   Compass,
-  RotateCw
+  RotateCw,
+  Play
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
@@ -233,6 +234,20 @@ export function CommandPalette({
         action: () => {
           onClose();
           document.getElementById("spatial-360")?.scrollIntoView({ behavior: "smooth" });
+        },
+      },
+      {
+        id: "action-replay-intro",
+        title: "Replay Zaxsat 'Z' Opening Animation",
+        category: "Actions",
+        icon: Play,
+        description: "Cinematic, eye-catchy geometric 'Z' intro sequence with audio surge",
+        action: () => {
+          onClose();
+          if (typeof window !== "undefined") {
+            sessionStorage.removeItem("has_seen_zaxsat_intro");
+          }
+          usePortfolioStore.getState().setIntroActive(true);
         },
       },
       {

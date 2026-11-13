@@ -26,6 +26,7 @@ import { RapierPhysicsModal } from "@/components/three/RapierPhysicsSandbox";
 import { Spatial360Section } from "@/components/spatial-360/Spatial360Section";
 import { Spatial360Modal } from "@/components/spatial-360/Spatial360Modal";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
+import { ZaxsatIntroLoader } from "@/components/intro/ZaxsatIntroLoader";
 import { usePortfolioStore } from "@/store/usePortfolioStore";
 import { useGsapScrollTrigger } from "@/hooks/useGsapScrollTrigger";
 import { Project } from "@/types";
@@ -97,6 +98,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#040408] text-slate-100 selection:bg-purple-600/30 selection:text-white">
+      {/* Powerful Zaxsat "Z" Opening Animation */}
+      <ZaxsatIntroLoader />
+
       {/* Precision Trailing Cyber Cursor (Desktop Only) */}
       <CustomCursor />
 

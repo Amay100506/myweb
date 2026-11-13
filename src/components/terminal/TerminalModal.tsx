@@ -240,6 +240,20 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
         );
         break;
 
+      case "intro":
+      case "zintro":
+        if (typeof window !== "undefined") {
+          sessionStorage.removeItem("has_seen_zaxsat_intro");
+        }
+        usePortfolioStore.getState().setIntroActive(true);
+        output = (
+          <div className="space-y-1 text-slate-300">
+            <p className="text-amber-300 font-bold">Executing Zaxsat 'Z' Geometric Power Opening...</p>
+            <p className="text-xs text-slate-400">Triggering kinetic laser path contouring, audio frequency rise, and chromatic shockwave.</p>
+          </div>
+        );
+        break;
+
       case "theme":
         output = (
           <p className="text-purple-300">Active Theme: Cyber Graphite (#040408) with Electric Purple & Cyan accents.</p>

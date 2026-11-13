@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUp, Mail, Sparkles, Terminal, ExternalLink } from "lucide-react";
+import { ArrowUp, Mail, Sparkles, Terminal, ExternalLink, Play } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
+import { usePortfolioStore } from "@/store/usePortfolioStore";
 
 interface FooterProps {
   onOpenTerminal: () => void;
@@ -74,6 +75,20 @@ export function Footer({ onOpenTerminal, onOpenCommandPalette }: FooterProps) {
           >
             [PDF]
           </a>
+          <button
+            onClick={() => {
+              sound.playClick();
+              if (typeof window !== "undefined") {
+                sessionStorage.removeItem("has_seen_zaxsat_intro");
+              }
+              usePortfolioStore.getState().setIntroActive(true);
+            }}
+            className="text-amber-400/80 hover:text-amber-300 transition-colors flex items-center gap-1 font-mono"
+            title="Replay Zaxsat 'Z' Opening Animation"
+          >
+            <Play className="w-2.5 h-2.5 fill-current" />
+            <span>[Replay Z Intro]</span>
+          </button>
           <button
             onClick={() => {
               sound.playClick();
