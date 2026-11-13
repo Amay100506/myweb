@@ -11,7 +11,8 @@ import {
   Zap, 
   X,
   ChevronDown,
-  Box
+  Box,
+  Compass
 } from "lucide-react";
 import { useI18n } from "@/context/I18nContext";
 import { useAccessibility, TextSize, ContrastMode } from "@/context/AccessibilityContext";
@@ -21,12 +22,14 @@ interface AccessibilityBarProps {
   onOpenSoundControls: () => void;
   onOpenShaderPlayground: () => void;
   onOpenPhysics?: () => void;
+  onOpenSpatial360?: () => void;
 }
 
 export function AccessibilityBar({
   onOpenSoundControls,
   onOpenShaderPlayground,
   onOpenPhysics,
+  onOpenSpatial360,
 }: AccessibilityBarProps) {
   const { lang, toggleLang } = useI18n();
   const { contrast, setContrast, textSize, setTextSize } = useAccessibility();
@@ -118,6 +121,20 @@ export function AccessibilityBar({
               ))}
             </div>
           </div>
+
+          {/* 360° Spatial Metaverse Mode */}
+          {onOpenSpatial360 && (
+            <button
+              onClick={() => {
+                sound.playClick();
+                onOpenSpatial360();
+              }}
+              className="w-full flex items-center justify-center gap-1.5 py-1.5 rounded bg-gradient-to-r from-purple-950/60 to-cyan-950/60 border border-cyan-500/40 hover:border-cyan-400 text-cyan-200 text-[11px] font-bold transition-all shadow-md"
+            >
+              <Compass className="w-3.5 h-3.5 text-cyan-400 animate-spin-slow" />
+              <span>360° Spatial Cyber Dome</span>
+            </button>
+          )}
 
           {/* Sound Controls Modal Launcher */}
           <button

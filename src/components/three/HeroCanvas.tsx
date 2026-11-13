@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense, Component, ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import { QuantumCore } from "./QuantumCore";
 import { DataParticles } from "./DataParticles";
@@ -21,7 +22,7 @@ class CanvasErrorBoundary extends Component<{ children: ReactNode; fallback: Rea
   }
 }
 
-export function HeroCanvas() {
+export function HeroCanvas({ isFreeOrbit = false }: { isFreeOrbit?: boolean }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isSupported, setIsSupported] = useState(true);
   const [mounted, setMounted] = useState(false);
@@ -61,7 +62,7 @@ export function HeroCanvas() {
   }
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-0">
+    <div className={`absolute inset-0 z-0 ${isFreeOrbit ? "pointer-events-auto" : "pointer-events-none"}`}>
       <CanvasErrorBoundary
         fallback={
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -77,7 +78,7 @@ export function HeroCanvas() {
             powerPreference: "high-performance",
             alpha: true,
           }}
-          className="pointer-events-none"
+          className={isFreeOrbit ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"}
         >
           <Suspense fallback={null}>
             {/* Dynamic Cinematic Lights */}
@@ -94,6 +95,19 @@ export function HeroCanvas() {
 
             {/* Cyber Data Particle Constellation */}
             <DataParticles count={260} />
+
+            {/* 360° Free Orbit Controls when enabled */}
+            {isFreeOrbit && (
+              <OrbitControls
+                enablePan={false}
+                enableZoom={true}
+                minDistance={3}
+                maxDistance={12}
+                autoRotate
+                autoRotateSpeed={0.8}
+                dampingFactor={0.05}
+              />
+            )}
 
             {/* Cinematic React Three Postprocessing */}
             <EffectComposer multisampling={0}>

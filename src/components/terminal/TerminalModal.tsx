@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Terminal as TerminalIcon, X, Sparkles, CornerDownLeft, Volume2, Shield } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
+import { usePortfolioStore } from "@/store/usePortfolioStore";
 
 interface TerminalModalProps {
   isOpen: boolean;
@@ -26,6 +27,7 @@ const KNOWN_COMMANDS = [
   "github",
   "contact",
   "resume",
+  "360",
   "clear",
   "theme",
   "whoami",
@@ -196,6 +198,16 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
               </a>
             </p>
             <p className="text-xs text-purple-400">Credential: AWS Certified Cloud Practitioner (CLF-C02) | BCA Dr. D.Y. Patil Vidyapeeth Pune</p>
+          </div>
+        );
+        break;
+
+      case "360":
+        usePortfolioStore.getState().setSpatial360ModalOpen(true);
+        output = (
+          <div className="space-y-1 text-slate-300">
+            <p className="text-cyan-400 font-bold">Initiating 360° Spatial Cyber Dome Metaverse...</p>
+            <p className="text-xs text-slate-400">Rendering procedural GLSL celestial sphere, orbiting spatial satellites, and OrbitControls azimuth tracking.</p>
           </div>
         );
         break;

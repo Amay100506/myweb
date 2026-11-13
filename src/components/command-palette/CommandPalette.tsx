@@ -15,7 +15,9 @@ import {
   Sparkles, 
   X,
   ExternalLink,
-  Download
+  Download,
+  Compass,
+  RotateCw
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
@@ -209,6 +211,28 @@ export function CommandPalette({
         action: () => {
           onClose();
           usePortfolioStore.getState().setPhysicsModalOpen(true);
+        },
+      },
+      {
+        id: "action-360-dome",
+        title: "Launch 360° Spatial Cyber Dome",
+        category: "Actions",
+        icon: Compass,
+        description: "Full 360-degree interactive celestial metaverse exploration",
+        action: () => {
+          onClose();
+          usePortfolioStore.getState().setSpatial360ModalOpen(true);
+        },
+      },
+      {
+        id: "action-360-turntable",
+        title: "Navigate to 360° Architecture Turntable",
+        category: "Actions",
+        icon: RotateCw,
+        description: "Inspect AWS, Kubernetes & Terraform 3D models with 360° spin",
+        action: () => {
+          onClose();
+          document.getElementById("spatial-360")?.scrollIntoView({ behavior: "smooth" });
         },
       },
       {

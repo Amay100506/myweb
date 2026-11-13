@@ -15,6 +15,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSectionProps) {
   const [show3D, setShow3D] = useState(true);
+  const [isFreeOrbit, setIsFreeOrbit] = useState(false);
 
   const scrollTo = (id: string) => {
     sound.playClick();
@@ -27,7 +28,7 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
       className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 pt-24 pb-12 overflow-hidden cyber-grid"
     >
       {/* 3D Background Canvas */}
-      {show3D && <HeroCanvas />}
+      {show3D && <HeroCanvas isFreeOrbit={isFreeOrbit} />}
 
       {/* Atmospheric Radial Gradient Lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-900/15 blur-[140px] pointer-events-none rounded-full" />
@@ -133,6 +134,21 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
 
       {/* 3D Visual Controls & Skip Toggle */}
       <div className="absolute bottom-4 right-4 z-20 hidden lg:flex items-center gap-2 text-[10px] font-mono text-slate-500">
+        <button
+          onClick={() => {
+            sound.playClick();
+            setIsFreeOrbit(!isFreeOrbit);
+          }}
+          className={`px-2.5 py-1 rounded border transition-colors ${
+            isFreeOrbit
+              ? "border-cyan-400 bg-cyan-950/80 text-cyan-300 font-bold shadow-lg shadow-cyan-950/40"
+              : "border-slate-800 bg-slate-950/80 hover:text-slate-300"
+          }`}
+          title="Drag and orbit 360 degrees around the hero universe"
+        >
+          {isFreeOrbit ? "360° Free Orbit: ACTIVE (Drag)" : "360° Free Orbit: OFF"}
+        </button>
+
         <button
           onClick={() => {
             sound.playClick();

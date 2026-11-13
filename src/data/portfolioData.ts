@@ -44,6 +44,7 @@ export const PORTFOLIO_DATA = {
     { id: "hero", label: "Command Nexus", description: "3D Core & Cloud Nexus", coordinates: [0, 0, 0] },
     { id: "about", label: "Profile & Story", description: "Education & DevOps Trajectory", coordinates: [-5, 2, -2] },
     { id: "skills", label: "Skill Constellation", description: "Cloud, DevOps & Systems Matrix", coordinates: [5, 2, -2] },
+    { id: "spatial-360", label: "360° Dimension", description: "Celestial Cyber Dome & 360° Turntable Studio", coordinates: [2, 3, -3] },
     { id: "projects", label: "System Showcases", description: "Terraform, Kubernetes, EKS & PRIOSORT", coordinates: [0, -3, -4] },
     { id: "experience", label: "Experience & Roles", description: "Professional Chronicle & Volunteerism", coordinates: [-4, -2, 2] },
     { id: "github", label: "GitHub Telemetry", description: "Live Repositories & Real-Time Stats", coordinates: [4, -2, 2] },

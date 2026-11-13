@@ -51,6 +51,7 @@ export function Navbar({
     { name: t.nav.about, href: "#about" },
     { name: t.nav.skills, href: "#skills" },
     { name: t.nav.techUniverse, href: "#tech-universe" },
+    { name: "360° Spatial", href: "#spatial-360" },
     { name: t.nav.projects, href: "#projects" },
     { name: t.nav.journey, href: "#journey" },
     { name: t.nav.experience, href: "#experience" },

@@ -12,6 +12,7 @@ interface PortfolioState {
   shaderPlaygroundOpen: boolean;
   physicsModalOpen: boolean;
   compareModalOpen: boolean;
+  spatial360ModalOpen: boolean;
 
   // Selected comparison projects
   compareProjectA: Project | undefined;
@@ -33,6 +34,7 @@ interface PortfolioState {
   setSoundControlsOpen: (open: boolean) => void;
   setShaderPlaygroundOpen: (open: boolean) => void;
   setPhysicsModalOpen: (open: boolean) => void;
+  setSpatial360ModalOpen: (open: boolean) => void;
   setCompareModalOpen: (open: boolean, projA?: Project, projB?: Project) => void;
   setActiveZone: (zone: string) => void;
 
@@ -50,6 +52,7 @@ export const usePortfolioStore = create<PortfolioState>((set) => ({
   soundControlsOpen: false,
   shaderPlaygroundOpen: false,
   physicsModalOpen: false,
+  spatial360ModalOpen: false,
   compareModalOpen: false,
   compareProjectA: undefined,
   compareProjectB: undefined,
@@ -65,6 +68,7 @@ export const usePortfolioStore = create<PortfolioState>((set) => ({
   setSoundControlsOpen: (open) => set({ soundControlsOpen: open }),
   setShaderPlaygroundOpen: (open) => set({ shaderPlaygroundOpen: open }),
   setPhysicsModalOpen: (open) => set({ physicsModalOpen: open }),
+  setSpatial360ModalOpen: (open) => set({ spatial360ModalOpen: open }),
   setCompareModalOpen: (open, projA, projB) =>
     set({
       compareModalOpen: open,

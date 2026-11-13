@@ -23,6 +23,8 @@ import { ProjectCompareModal } from "@/components/projects/ProjectCompareModal";
 import { SoundControlsModal } from "@/components/common/SoundControlsModal";
 import { ShaderPlaygroundModal } from "@/components/experiments/ShaderPlaygroundModal";
 import { RapierPhysicsModal } from "@/components/three/RapierPhysicsSandbox";
+import { Spatial360Section } from "@/components/spatial-360/Spatial360Section";
+import { Spatial360Modal } from "@/components/spatial-360/Spatial360Modal";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { usePortfolioStore } from "@/store/usePortfolioStore";
 import { useGsapScrollTrigger } from "@/hooks/useGsapScrollTrigger";
@@ -49,6 +51,8 @@ export default function Home() {
     setShaderPlaygroundOpen,
     physicsModalOpen,
     setPhysicsModalOpen,
+    spatial360ModalOpen,
+    setSpatial360ModalOpen,
     compareModalOpen,
     setCompareModalOpen,
     compareProjectA,
@@ -101,6 +105,7 @@ export default function Home() {
         onOpenSoundControls={() => setSoundControlsOpen(true)}
         onOpenShaderPlayground={() => setShaderPlaygroundOpen(true)}
         onOpenPhysics={() => setPhysicsModalOpen(true)}
+        onOpenSpatial360={() => setSpatial360ModalOpen(true)}
       />
 
       {/* Main Top Navigation Bar */}
@@ -137,6 +142,11 @@ export default function Home() {
       {/* Module 3: Interactive 3D Technology Universe */}
       <div className="gsap-reveal">
         <TechUniverseSection />
+      </div>
+
+      {/* 360° Spatial Dimension & Turntable Studio */}
+      <div className="gsap-reveal">
+        <Spatial360Section />
       </div>
 
       {/* Flagship Projects Showcases & Case Studies */}
@@ -227,6 +237,12 @@ export default function Home() {
       <RapierPhysicsModal
         isOpen={physicsModalOpen}
         onClose={() => setPhysicsModalOpen(false)}
+      />
+
+      {/* 360° Immersive Spatial Metaverse Modal */}
+      <Spatial360Modal
+        isOpen={spatial360ModalOpen}
+        onClose={() => setSpatial360ModalOpen(false)}
       />
     </main>
   );
