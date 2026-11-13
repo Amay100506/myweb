@@ -85,6 +85,7 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
             <p><span className="text-cyan-400 w-28 inline-block">skills</span> : Language proficiencies & frameworks</p>
             <p><span className="text-cyan-400 w-28 inline-block">projects</span> : PrioSort, Rakshak, NotifyIQ specifications</p>
             <p><span className="text-cyan-400 w-28 inline-block">experience</span> : Software systems engineering & project leadership</p>
+            <p><span className="text-cyan-400 w-28 inline-block">company</span> : Zaxsat Technologies venture details & direct link</p>
             <p><span className="text-cyan-400 w-28 inline-block">education</span> : Dr. D. Y. Patil Vidyapeeth Pune details</p>
             <p><span className="text-cyan-400 w-28 inline-block">github</span> : Repositories, stars, and language stats</p>
             <p><span className="text-cyan-400 w-28 inline-block">contact</span> : Transmission coordinates & email</p>
@@ -153,7 +154,14 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
           <div className="space-y-2 text-slate-300">
             {PORTFOLIO_DATA.experience.map((exp) => (
               <div key={exp.id} className="border-l-2 border-cyan-500/40 pl-3">
-                <p className="text-purple-300 font-bold">{exp.role} @ {exp.company}</p>
+                <p className="text-purple-300 font-bold">
+                  {exp.role} @ {exp.company}{" "}
+                  {exp.companyUrl && (
+                    <a href={exp.companyUrl} target="_blank" rel="noreferrer" className="text-amber-300 underline font-mono text-xs">
+                      ({exp.companyUrl.replace("https://", "")})
+                    </a>
+                  )}
+                </p>
                 <p className="text-xs text-slate-400">{exp.period} | {exp.location}</p>
                 <ul className="list-disc list-inside text-xs text-slate-400 space-y-0.5 mt-1">
                   {exp.responsibilities.slice(0, 3).map((r, i) => (
@@ -162,6 +170,26 @@ export function TerminalModal({ isOpen, onClose }: TerminalModalProps) {
                 </ul>
               </div>
             ))}
+          </div>
+        );
+        break;
+
+      case "company":
+      case "zaxsat":
+        if (typeof window !== "undefined") {
+          window.open("https://www.zaxsat.online", "_blank");
+        }
+        output = (
+          <div className="space-y-1 text-slate-300">
+            <p className="text-amber-300 font-bold">Zaxsat Technologies (www.zaxsat.online)</p>
+            <p className="text-xs text-slate-300">Founder & Cloud/DevOps Engineer: Amay Kumar</p>
+            <p className="text-xs text-slate-400">Specialization: Resilient Cloud Infrastructure, Docker Containerization, CI/CD, and Modern Digital Systems.</p>
+            <p className="text-xs text-cyan-400">
+              Direct Link:{" "}
+              <a href="https://www.zaxsat.online" target="_blank" rel="noreferrer" className="underline font-bold text-amber-300">
+                https://www.zaxsat.online
+              </a>
+            </p>
           </div>
         );
         break;

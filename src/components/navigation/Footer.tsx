@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUp, Mail, Sparkles, Terminal } from "lucide-react";
+import { ArrowUp, Mail, Sparkles, Terminal, ExternalLink } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
@@ -55,6 +55,17 @@ export function Footer({ onOpenTerminal, onOpenCommandPalette }: FooterProps) {
           <Link href="/contact" className="hover:text-cyan-300 transition-colors">
             Contact
           </Link>
+          <a
+            href="https://www.zaxsat.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sound.playClick()}
+            className="text-amber-300 hover:text-amber-200 flex items-center gap-1 font-semibold transition-colors"
+            title="Zaxsat Technologies (www.zaxsat.online)"
+          >
+            <span>Zaxsat Technologies</span>
+            <ExternalLink className="w-2.5 h-2.5" />
+          </a>
           <a
             href="/resume.pdf"
             download="Amay_Kumar_Resume.pdf"

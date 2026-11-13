@@ -14,7 +14,10 @@ import {
   AlertCircle, 
   Clock, 
   MessageSquare,
-  Coffee
+  Coffee,
+  Building2,
+  ExternalLink,
+  Globe
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
@@ -160,6 +163,31 @@ export default function ContactPage() {
                 <span className="text-emerald-400">🟢 Active Hours</span>
               </div>
             </div>
+
+            {/* Direct Company Card */}
+            <a
+              href="https://www.zaxsat.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 rounded-2xl bg-gradient-to-r from-amber-950/30 via-slate-900/60 to-purple-950/30 border border-amber-500/30 hover:border-amber-400/60 transition-all block group shadow-lg"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-amber-400" />
+                  <h4 className="text-sm font-mono font-bold text-white group-hover:text-amber-300 transition-colors">
+                    Zaxsat Technologies
+                  </h4>
+                </div>
+                <ExternalLink className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+              <p className="text-xs text-slate-300 font-sans leading-relaxed">
+                Direct technology venture specializing in modern cloud architectures, container systems, and scalable digital solutions.
+              </p>
+              <div className="mt-3 text-xs font-mono text-cyan-300 flex items-center gap-1.5 underline decoration-cyan-500/50">
+                <Globe className="w-3.5 h-3.5 text-cyan-400" />
+                <span>www.zaxsat.online</span>
+              </div>
+            </a>
 
             {/* Resume Download Card */}
             <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/40 to-cyan-950/40 border border-purple-500/30 space-y-3">

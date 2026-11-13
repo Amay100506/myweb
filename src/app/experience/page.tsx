@@ -18,7 +18,7 @@ import { PORTFOLIO_DATA } from "@/data/portfolioData";
 export const metadata = {
   title: "Experience & Work History | Amay Kumar",
   description:
-    "Professional experience of Amay Kumar: Sales Executive at performancespur, Student Volunteer at NSS, AWS Certified Cloud Practitioner.",
+    "Professional experience of Amay Kumar: Founder at Zaxsat Technologies (www.zaxsat.online), Sales Executive at performancespur, Student Volunteer at NSS, AWS Certified Cloud Practitioner.",
 };
 
 export default function ExperiencePage() {
@@ -77,9 +77,24 @@ export default function ExperiencePage() {
                   <h2 className="text-2xl sm:text-3xl font-bold font-mono text-white">
                     {exp.role}
                   </h2>
-                  <div className="text-lg font-semibold text-cyan-300 font-sans mt-0.5">
-                    {exp.company}
-                  </div>
+                  {exp.companyUrl ? (
+                    <a
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-lg font-semibold text-cyan-300 hover:text-cyan-200 underline decoration-cyan-500/50 hover:decoration-cyan-300 font-sans mt-0.5 group"
+                    >
+                      <span>{exp.company}</span>
+                      <span className="text-xs font-mono text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-500/30">
+                        {exp.companyUrl.replace("https://", "")}
+                      </span>
+                      <ExternalLink className="w-3.5 h-3.5 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  ) : (
+                    <div className="text-lg font-semibold text-cyan-300 font-sans mt-0.5">
+                      {exp.company}
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex flex-col sm:items-end gap-1 text-xs font-mono text-slate-400">

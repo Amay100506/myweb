@@ -269,6 +269,17 @@ export function CommandPalette({
           onClose();
         },
       },
+      {
+        id: "company-zaxsat",
+        title: "Visit Zaxsat Technologies (www.zaxsat.online)",
+        category: "Social",
+        icon: ExternalLink,
+        description: "Official website of Amay's company: https://www.zaxsat.online",
+        action: () => {
+          window.open("https://www.zaxsat.online", "_blank");
+          onClose();
+        },
+      },
     ];
 
     // Add projects to search

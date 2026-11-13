@@ -37,10 +37,11 @@ export interface ExperienceItem {
   id: string;
   role: string;
   company: string;
+  companyUrl?: string;
   location: string;
   duration: string;
   period: string; // e.g. "January 2026 – March 2026"
-  type: 'Internship' | 'Full-time' | 'Project Leadership' | 'Professional Experience' | 'Student Volunteer' | string;
+  type: 'Internship' | 'Full-time' | 'Project Leadership' | 'Professional Experience' | 'Student Volunteer' | 'Venture' | string;
   summary: string;
   responsibilities: string[];
   skillsUsed: string[];
@@ -99,6 +100,8 @@ export interface JournalPost {
 export interface NowStatus {
   location: string;
   studying: string;
+  company?: string;
+  companyUrl?: string;
   learning: string;
   reading: string;
   listeningTo: string;

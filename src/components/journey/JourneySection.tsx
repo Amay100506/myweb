@@ -29,6 +29,21 @@ export interface JourneyMilestone {
 
 export const JOURNEY_MILESTONES: JourneyMilestone[] = [
   {
+    id: "zaxsat-technologies-venture",
+    year: "2025 – Present",
+    quarter: "Active",
+    title: "Founder & Cloud/DevOps Engineer",
+    category: "Career",
+    organization: "Zaxsat Technologies (www.zaxsat.online)",
+    description: "Directing cloud infrastructure, modern web architectures, DevOps automation, and scalable client systems at Zaxsat Technologies.",
+    deliverables: [
+      "Architecting automated cloud deployments and scalable containerized infrastructure.",
+      "Designing resilient CI/CD pipelines, Docker container systems, and secure cloud networking.",
+      "Directing client technology implementations and online presence via www.zaxsat.online.",
+    ],
+    tags: ["Zaxsat Technologies", "Cloud Infrastructure", "DevOps", "AWS", "Docker", "www.zaxsat.online"],
+  },
+  {
     id: "performancespur-sales",
     year: "2026",
     quarter: "Q2",

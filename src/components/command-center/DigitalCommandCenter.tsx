@@ -35,6 +35,7 @@ export function DigitalCommandCenter() {
   ];
 
   const milestones = [
+    { year: "2025 – Present", title: "Founder & Cloud/DevOps Engineer", org: "Zaxsat Technologies (www.zaxsat.online)", detail: "Directing cloud infrastructure, modern web architectures, DevOps automation, and scalable client systems." },
     { year: "2026", title: "Sales Executive", org: "performancespur (Pune, IN)", detail: "Recorded client details and sales activity in CRM systems. Built strong professional relationships to increase sales." },
     { year: "2025 – 2026", title: "Student Volunteer", org: "NSS (Pune, IN)", detail: "Assisted with telephone communication, database management, correspondence, and technical/instructional assistance." },
     { year: "2025", title: "AWS Certified Cloud Practitioner", org: "Amazon Web Services (AWS)", detail: "CLF-C02 certification validating core cloud architecture, EC2, S3, IAM, VPC, and CloudWatch." },

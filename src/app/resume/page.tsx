@@ -88,6 +88,15 @@ export default function ResumePage() {
                 <Globe className="w-3 h-3 text-cyan-400 print:text-black" />
                 {personal.social.linkedin}
               </span>
+              <a
+                href="https://www.zaxsat.online"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-cyan-300 print:text-black text-amber-300 font-semibold"
+              >
+                <Globe className="w-3 h-3 text-amber-400 print:text-black" />
+                www.zaxsat.online (Zaxsat Technologies)
+              </a>
             </div>
           </div>
 
@@ -148,7 +157,22 @@ export default function ResumePage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-sm font-bold text-white print:text-black">
-                        {exp.role} <span className="font-normal text-slate-400 print:text-slate-600">/ {exp.company}</span>
+                        {exp.role}{" "}
+                        <span className="font-normal text-slate-400 print:text-slate-600">
+                          /{" "}
+                          {exp.companyUrl ? (
+                            <a
+                              href={exp.companyUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-cyan-300 hover:underline print:text-black font-semibold"
+                            >
+                              {exp.company} ({exp.companyUrl.replace("https://", "")})
+                            </a>
+                          ) : (
+                            exp.company
+                          )}
+                        </span>
                       </h3>
                       <p className="text-xs text-cyan-400 print:text-cyan-800">{exp.location}</p>
                     </div>

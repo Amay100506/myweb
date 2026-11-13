@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight, Download, BookOpen } from "lucide-react";
+import { ArrowDown, Code2, Sparkles, Terminal, FileText, Send, ChevronRight, Download, BookOpen, ExternalLink, Building2 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { HeroCanvas } from "../three/HeroCanvas";
 import { TelemetryHUD } from "../common/TelemetryHUD";
@@ -43,11 +43,27 @@ export function HeroSection({ onOpenResume, onOpenTerminal, onOpenAI }: HeroSect
         </div>
 
         {/* Human & Professional Headline Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 mb-6 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>CLOUD & DEVOPS ENGINEER • AWS CERTIFIED PRACTITIONER</span>
-          <span className="text-slate-500">•</span>
-          <span className="text-emerald-400">PUNE, IN</span>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <span>CLOUD & DEVOPS ENGINEER • AWS CERTIFIED PRACTITIONER</span>
+            <span className="text-slate-500">•</span>
+            <span className="text-emerald-400">PUNE, IN</span>
+          </div>
+
+          {/* Direct Company Badge & Link */}
+          <a
+            href="https://www.zaxsat.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sound.playClick()}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/40 bg-amber-950/30 hover:bg-amber-900/40 text-xs font-mono text-amber-300 transition-all shadow-[0_0_15px_rgba(245,158,11,0.15)] group"
+            title="Visit Zaxsat Technologies (www.zaxsat.online)"
+          >
+            <Building2 className="w-3.5 h-3.5 text-amber-400" />
+            <span>Company: <strong className="text-white underline decoration-amber-400">Zaxsat Technologies</strong> (www.zaxsat.online)</span>
+            <ExternalLink className="w-3 h-3 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
         </div>
 
         {/* Main Name Heading */}

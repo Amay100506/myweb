@@ -20,12 +20,14 @@ export async function POST(req: Request) {
 Key Highlights from his resume:
 • Name: Amay Kumar (Pune 411057)
 • Status: Engineering Student (BCA, Dr. D. Y. Patil Vidyapeeth Pune, CGPA 8.0)
+• Company / Venture: Founder & Cloud/DevOps Engineer @ Zaxsat Technologies (https://www.zaxsat.online)
 • Certification: AWS Certified Cloud Practitioner (CLF-C02)
 • Cloud & DevOps Skills: AWS (EC2, S3, IAM, VPC, RDS, CloudWatch), Docker, Kubernetes, Terraform, Linux, Bash, Python, Git/GitHub, Prometheus, TCP/IP, DNS
-• Experience: Sales Executive @ performancespur | Student Volunteer @ NSS`;
+• Experience: Founder @ Zaxsat Technologies (www.zaxsat.online) | Sales Executive @ performancespur | Student Volunteer @ NSS`;
       return NextResponse.json({
         reply,
         suggested: [
+          "Tell me about Amay's company Zaxsat Technologies.",
           "What are Amay's AWS skills?",
           "Tell me about the Terraform infrastructure project.",
           "What is his educational background?",
@@ -35,24 +37,36 @@ Key Highlights from his resume:
 
     // Recruiter-Focused Response Mode
     if (mode === "recruiter") {
-      if (query.includes("background") || query.includes("who") || query.includes("summary") || query.includes("profile")) {
-        reply = `Amay Kumar is an Engineering student at Dr. D. Y. Patil Vidyapeeth in Pune, India (BCA, current CGPA: 8.0) and an AWS Certified Cloud Practitioner (CLF-C02).
+      if (query.includes("zaxsat") || query.includes("company") || query.includes("startup") || query.includes("venture") || query.includes("online")) {
+        reply = `Amay Kumar is the Founder & Cloud/DevOps Engineer at **Zaxsat Technologies** (website: https://www.zaxsat.online).
+At Zaxsat Technologies, Amay leads cloud infrastructure automation, scalable containerized microservice deployments, and robust web architecture engineering. You can explore the company directly at www.zaxsat.online.`;
+        suggested = [
+          "What are his core Cloud & DevOps skills?",
+          "Tell me about his AWS certification.",
+          "How can I contact Amay?",
+        ];
+      } else if (query.includes("background") || query.includes("who") || query.includes("summary") || query.includes("profile")) {
+        reply = `Amay Kumar is an Engineering student at Dr. D. Y. Patil Vidyapeeth in Pune, India (BCA, current CGPA: 8.0), an AWS Certified Cloud Practitioner (CLF-C02), and Founder of Zaxsat Technologies (www.zaxsat.online).
 He has a strong interest and proven capabilities in Cloud Computing, DevOps, automated CI/CD pipelines, container orchestration, and emerging technologies.
 He is continuously developing technical skills through hands-on projects including automated Terraform provisioning and Kubernetes microservices on AWS EKS.`;
         suggested = [
+          "Tell me about his company Zaxsat Technologies.",
           "Tell me about Amay's AWS certification.",
           "What are his core Cloud & DevOps skills?",
           "Download Amay's resume",
         ];
       } else if (query.includes("experience") || query.includes("role") || query.includes("career")) {
-        reply = `Amay's Professional Chronicle & Volunteer Experience:
-1. Sales Executive @ performancespur (Pune, IN | 04/2026 – 06/2026):
+        reply = `Amay's Professional Chronicle & Venture Experience:
+1. Founder & Cloud/DevOps Engineer @ Zaxsat Technologies (Pune, IN | 2025 – Present | https://www.zaxsat.online):
+   • Directing cloud infrastructure, modern web architectures, DevOps automation, and scalable client systems.
+2. Sales Executive @ performancespur (Pune, IN | 04/2026 – 06/2026):
    • Recorded client details and sales activity in CRM systems.
    • Built strong, professional relationships through identification of client needs to expand sales opportunities.
-2. Student Volunteer @ NSS (Pune, IN | 10/2025 – 04/2026):
+3. Student Volunteer @ NSS (Pune, IN | 10/2025 – 04/2026):
    • Assisted with answering telephone calls, managing databases, and drafting institutional correspondence.
    • Provided technical support and instructional assistance to help students succeed.`;
         suggested = [
+          "Visit Zaxsat Technologies website",
           "What technical tools does he specialize in?",
           "What degree is he pursuing?",
           "How can I download his resume?",

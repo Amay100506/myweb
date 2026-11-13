@@ -28,6 +28,13 @@ export const PORTFOLIO_DATA = {
       linkedin: "https://www.linkedin.com/in/amaykumar19connect",
       email: "amaykumar100506@gmail.com",
       phone: "+91 7666571793",
+      companyWebsite: "https://www.zaxsat.online",
+    },
+    company: {
+      name: "Zaxsat Technologies",
+      website: "https://www.zaxsat.online",
+      displayUrl: "www.zaxsat.online",
+      role: "Founder & Cloud/DevOps Engineer",
     },
     availability: {
       status: "Available for Cloud & DevOps Engineering Roles",
@@ -260,6 +267,25 @@ export const PORTFOLIO_DATA = {
 
   experience: [
     {
+      id: "founder-zaxsat-technologies",
+      role: "Founder & Cloud/DevOps Engineer",
+      company: "Zaxsat Technologies",
+      companyUrl: "https://www.zaxsat.online",
+      location: "Pune, IN",
+      duration: "Present",
+      period: "2025 – Present",
+      type: "Venture / Technology Firm",
+      summary:
+        "Directing cloud infrastructure, modern web architectures, DevOps automation, and scalable client solutions at Zaxsat Technologies (www.zaxsat.online).",
+      responsibilities: [
+        "Architecting automated cloud deployments and scalable containerized infrastructure for modern digital solutions.",
+        "Designing resilient CI/CD pipelines, Docker container systems, and secure cloud networking architectures.",
+        "Directing technology strategy, client platform deployments, and technical implementation at Zaxsat Technologies (www.zaxsat.online).",
+      ],
+      skillsUsed: ["Cloud Architecture", "AWS", "DevOps", "Docker", "Terraform", "CI/CD", "Full-Stack Systems"],
+      verified: true,
+    },
+    {
       id: "sales-executive-performancespur",
       role: "Sales Executive",
       company: "performancespur",
@@ -318,6 +344,8 @@ export const PORTFOLIO_DATA = {
   now: {
     location: "Pune, Maharashtra (411057)",
     studying: "Bachelor of Computer Applications (BCA) 2nd Year @ Dr. D. Y. Patil Vidyapeeth, Pune (CGPA: 8.0)",
+    company: "Building & scaling cloud platforms at Zaxsat Technologies",
+    companyUrl: "https://www.zaxsat.online",
     learning: "Terraform reusable modules, Kubernetes networking (Ingress, Services, CNI), and AWS EKS workloads.",
     reading: "Designing Data-Intensive Applications by Martin Kleppmann",
     listeningTo: "Tycho, Solar Fields & Synthwave while debugging",
@@ -345,6 +373,7 @@ export const PORTFOLIO_DATA = {
       "I grew up in Bareilly, Uttar Pradesh, studying at Kendriya Vidyalaya AFS Bareilly. Growing up around an air force base gave me an appreciation for disciplined operations and precision. When I moved to Pune to pursue my Bachelor of Computer Applications at Dr. D. Y. Patil Vidyapeeth, I wanted to understand how software powers modern services at scale.",
       "My turning point was discovering cloud infrastructure and containerization. Rather than treating computers like isolated black boxes, I became fascinated by how servers across availability zones coordinate traffic, how Docker wraps entire environments in reproducible images, and how Terraform lets you declare an entire multi-tier cloud topology in clean code.",
       "Earning the AWS Certified Cloud Practitioner (CLF-C02) credential validated my foundational knowledge, but the real fun has been getting my hands dirty—debugging broken container builds, configuring VPC subnets, and deploying microservices on Kubernetes.",
+      "Alongside my studies, I founded Zaxsat Technologies (www.zaxsat.online), where I help businesses design resilient cloud architectures, automate deployments, and craft modern digital platforms.",
       "I'm an engineer who values curiosity, practical problem-solving, and continuous learning above all else."
     ],
   },
@@ -421,8 +450,9 @@ export const PORTFOLIO_DATA = {
     version: "2.5-Neural",
     role: "Autonomous Portfolio Intelligence & Technical Concierge",
     greeting:
-      "Greetings. I am AMAY AI, the intelligent command assistant for Amay Kumar's portfolio. Ask me about Amay's Cloud & DevOps engineering skills, AWS Certified Cloud Practitioner credentials, Docker & Kubernetes projects, or academic background at DY Patil.",
+      "Greetings. I am AMAY AI, the intelligent command assistant for Amay Kumar's portfolio. Ask me about Amay's company Zaxsat Technologies (www.zaxsat.online), Cloud & DevOps engineering skills, AWS Certified Cloud Practitioner credentials, or hands-on projects.",
     suggestedQuestions: [
+      "Tell me about Amay's company Zaxsat Technologies.",
       "What are Amay's core Cloud & DevOps skills?",
       "Tell me about Amay's AWS Certified Cloud Practitioner certification.",
       "Explain the Terraform and Docker CI/CD infrastructure project.",

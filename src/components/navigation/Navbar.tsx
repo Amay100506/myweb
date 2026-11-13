@@ -92,7 +92,7 @@ export function Navbar({
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -104,6 +104,18 @@ export function Navbar({
               <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-purple-500 to-cyan-400 transition-all duration-200 group-hover:w-full" />
             </Link>
           ))}
+          <a
+            href="https://www.zaxsat.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sound.playClick()}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-amber-500/40 bg-amber-950/20 hover:bg-amber-900/40 text-[11px] font-mono text-amber-300 hover:text-amber-200 transition-colors shadow-sm group"
+            title="Visit Zaxsat Technologies (www.zaxsat.online)"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Zaxsat Technologies</span>
+            <ExternalLink className="w-3 h-3 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
         </nav>
 
         {/* Action Controls & Utilities */}
@@ -234,6 +246,20 @@ export function Navbar({
                 {link.name}
               </Link>
             ))}
+            <a
+              href="https://www.zaxsat.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                sound.playClick();
+                setMobileMenuOpen(false);
+              }}
+              className="col-span-2 p-2 rounded bg-amber-950/30 border border-amber-500/40 text-amber-300 text-center flex items-center justify-center gap-1.5 font-semibold"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Zaxsat Technologies (www.zaxsat.online)</span>
+              <ExternalLink className="w-3 h-3 text-amber-400" />
+            </a>
           </div>
 
           <div className="grid grid-cols-2 gap-2 pt-1">

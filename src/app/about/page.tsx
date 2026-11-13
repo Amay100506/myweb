@@ -15,7 +15,8 @@ import {
   ExternalLink,
   Sparkles,
   CheckCircle2,
-  Calendar
+  Calendar,
+  Building2
 } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { GithubIcon, LinkedinIcon } from "@/components/common/Icons";
@@ -125,6 +126,29 @@ export default function AboutPage() {
               </span>
               <p className="text-slate-200 font-medium">{now.coffeeFuel}</p>
             </div>
+          </div>
+
+          {/* Direct Company Venture Banner */}
+          <div className="mt-6 pt-5 border-t border-purple-500/20 flex flex-wrap items-center justify-between gap-3 bg-amber-950/20 p-4 rounded-xl border border-amber-500/30">
+            <div className="flex items-center gap-2.5">
+              <Building2 className="w-4 h-4 text-amber-400" />
+              <div>
+                <span className="text-[10px] font-mono text-amber-300 block uppercase">Direct Company / Venture</span>
+                <span className="text-sm font-bold text-white">Zaxsat Technologies</span>
+                <span className="text-xs text-slate-300 block mt-0.5">
+                  Building & scaling resilient cloud infrastructures, web architectures, and client platforms.
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://www.zaxsat.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 font-mono text-xs font-semibold transition-all group"
+            >
+              <span>Visit www.zaxsat.online</span>
+              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
         </div>
 

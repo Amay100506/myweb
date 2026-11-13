@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Calendar, MapPin, CheckCircle2, TrendingUp, BarChart3, FileSpreadsheet, Download } from "lucide-react";
+import { Briefcase, Calendar, MapPin, CheckCircle2, TrendingUp, BarChart3, FileSpreadsheet, Download, ExternalLink } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { sound } from "@/lib/sound";
 
@@ -14,13 +14,13 @@ export function ExperienceSection() {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/20 text-xs font-mono text-purple-300 mb-3">
             <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
-            <span>SECTOR 03 // PROFESSIONAL CHRONICLE</span>
+            <span>PROFESSIONAL CHRONICLE & VENTURES</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold font-mono tracking-tight text-white mb-4">
             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Experience</span>
           </h2>
           <p className="max-w-xl text-slate-400 text-sm font-sans">
-            Client relations & CRM operations at performancespur, NSS student volunteerism, and technical systems support.
+            Directing Zaxsat Technologies (www.zaxsat.online), client operations at performancespur, and NSS student volunteerism.
           </p>
         </div>
 
@@ -47,9 +47,25 @@ export function ExperienceSection() {
                   <h3 className="text-2xl font-bold font-mono text-white">
                     {exp.role}
                   </h3>
-                  <div className="text-base font-semibold text-cyan-300 font-sans mt-0.5">
-                    {exp.company}
-                  </div>
+                  {exp.companyUrl ? (
+                    <a
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => sound.playClick()}
+                      className="inline-flex items-center gap-1.5 text-base font-semibold text-cyan-300 hover:text-cyan-200 underline decoration-cyan-500/50 hover:decoration-cyan-300 font-sans mt-0.5 group"
+                    >
+                      <span>{exp.company}</span>
+                      <span className="text-xs font-mono text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-500/30">
+                        {exp.companyUrl.replace("https://", "")}
+                      </span>
+                      <ExternalLink className="w-3.5 h-3.5 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  ) : (
+                    <div className="text-base font-semibold text-cyan-300 font-sans mt-0.5">
+                      {exp.company}
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex flex-col sm:items-end gap-1 text-xs font-mono text-slate-400">
